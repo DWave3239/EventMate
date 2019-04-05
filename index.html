@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+  
+  <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon' />
+
+  <title>EventMate - Find your Fun!</title>
+</head>
+
+<body>
+  <header>
+    <div class="topbar">
+        <div class="menuIcon"><i class="icon fas fa-bars" onclick="changeRotation(this)"></i></div>
+        <div class="brandDiv"></div>
+        <div class="headerSpacer">&nbsp;</div>
+    </div>
+    <div class="toplowerbar">
+        <div class="headerSpacer">&nbsp;</div>
+        <div class="centerHeaderDiv">Events in your location</div>
+        <div class="filterIcon"><img src="images/filterOff.png" height="35px" onmouseover="this.src='images/filterOn.png'" onmouseout="this.src='images/filterOff.png'"/></div>
+    </div>
+    <!--<nav>
+        <ul>
+            <li><a href="#link_1.html">Startseite</a></li>
+            <li><a href="#link_2.html">Unterseite 1</a></li>
+            <li><a href="#link_3.html">Unterseite 2</a></li>    
+            <li><a href="#link_4.html">Kontakt</a></li>
+        </ul>
+    </nav>-->
+  </header>
+  
+  <main>
+    <article class="eventTile">
+        <div class="upperTile">
+            <div class="floater eventIcon">
+                <img src="images/nomaam.png" class="eventIconImg">
+            </div>
+            <div class="floater description">
+              <span class="name">no|maam Mensafest</span><br />
+              <span class="location">JKU Mensa, Linz, AT</span><br />
+              <span class="time">Do, 28.03.2019 um 20:30</span>
+            </div>
+            <div class="clearer"></div>
+        </div>
+        <div class="lowerTile">
+            <p>Schon diesen Donnerstag steigt wieder die Party des Semesters! Wir empfangen euch ab 20:30 Uhr im Mensakeller mit einer halben Stunde Freibier!</p>
+        </div>
+    </article>
+    <article class="eventTile">
+        <div class="upperTile">
+            <div class="floater eventIcon">
+                <img src="images/teconomy.png" class="eventIconImg">
+            </div>
+            <div class="floater description">
+                <span class="name">Teconomy Linz 2019</span><br />
+                <span class="location">Keplergeb. JKU, Linz, AT</span><br />
+                <span class="time">Mi, 03.04.2019 um 09:00</span>
+            </div>
+            <div class="clearer"></div>
+        </div>
+        <div class="lowerTile">
+            <p>Neben zahlreichen Firmen erwartet dich u.a. diese Programm:<br>Start-Ups, Job Wall, TEC Talks, TEC Snack, CV Check, Social Media Check, Bewerbungsfotos</p>
+        </div>
+    </article>
+    <article class="eventTile">
+        <div class="upperTile">
+            <div class="floater eventIcon">
+                <img src="images/LOGO_rot auf schwarz.png" class="eventIconImg">
+            </div>
+            <div class="floater description">
+                <span class="name">Earthsplitter Teaser Party</span><br />
+                <span class="location">Linz, AT</span><br />
+                <span class="time">Mo, 01.04.2019 um 11:00</span>
+            </div>
+            <div class="clearer"></div>
+        </div>
+        <div class="lowerTile">
+            <p>Seit ihr bereit eure Gehirne zu überladen und euch bei einem Musikerlebnis der ganz heftigen Art teilzunehmen? Dann bist du hier genau richtig und wirst jede Menge Anschluss und eine neue Lieblingsband kennenlernen. Sei dabei!</p>
+        </div>
+    </article>
+    <article class="eventTile">
+        <div class="upperTile">
+            <div class="floater eventIcon">
+                <img src="images/nomaam.png" class="eventIconImg">
+            </div>
+            <div class="floater description">
+              <span class="name">no|maam Mensafest</span><br />
+              <span class="location">JKU Mensa, Linz, AT</span><br />
+              <span class="time">Do, 28.03.2019 um 20:30</span>
+            </div>
+            <div class="clearer"></div>
+        </div>
+        <div class="lowerTile">
+            <p>Schon diesen Donnerstag steigt wieder die Party des Semesters! Wir empfangen euch ab 20:30 Uhr im Mensakeller mit einer halben Stunde Freibier!</p>
+        </div>
+    </article>
+    <article class="eventTile">
+        <div class="upperTile">
+            <div class="floater eventIcon">
+                <img src="images/teconomy.png" class="eventIconImg">
+            </div>
+            <div class="floater description">
+                <span class="name">Teconomy Linz 2019</span><br />
+                <span class="location">Keplergeb. JKU, Linz, AT</span><br />
+                <span class="time">Mi, 03.04.2019 um 09:00</span>
+            </div>
+            <div class="clearer"></div>
+        </div>
+        <div class="lowerTile">
+            <p>Neben zahlreichen Firmen erwartet dich u.a. diese Programm:<br>Start-Ups, Job Wall, TEC Talks, TEC Snack, CV Check, Social Media Check, Bewerbungsfotos</p>
+        </div>
+    </article>
+    <article class="eventTile">
+        <div class="upperTile">
+            <div class="floater eventIcon">
+                <img src="images/LOGO_rot auf schwarz.png" class="eventIconImg">
+            </div>
+            <div class="floater description">
+                <span class="name">Earthsplitter Teaser Party</span><br />
+                <span class="location">Linz, AT</span><br />
+                <span class="time">Mo, 01.04.2019 um 11:00</span>
+            </div>
+            <div class="clearer"></div>
+        </div>
+        <div class="lowerTile">
+            <p>Seit ihr bereit eure Gehirne zu überladen und euch bei einem Musikerlebnis der ganz heftigen Art teilzunehmen? Dann bist du hier genau richtig und wirst jede Menge Anschluss und eine neue Lieblingsband kennenlernen. Sei dabei!</p>
+        </div>
+    </article>
+  </main>
+
+  <footer>
+     <p>© 2019 by Team EventMate</p>
+  </footer>
+</body>
+</html>
