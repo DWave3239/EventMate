@@ -106,6 +106,8 @@ article, section, aside {
     width: 100%;*/
     padding: 10px;
 
+    left: -100000px;
+
     background: #d0d2d3;
 }
 
