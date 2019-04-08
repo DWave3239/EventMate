@@ -1,3 +1,4 @@
+/* GENERAL PAGE LAYOUT */
 body{
     margin: 10px auto;
     max-width: 60em;
@@ -45,6 +46,7 @@ article, section, aside {
     padding: 5px;
 }
 
+/* HEADER LAYOUT */
 .icon {
     margin: 10px;
     height: 25px;
@@ -78,6 +80,8 @@ article, section, aside {
 }
 
 .centerHeaderDiv {
+    height: 40px;
+    padding: 2.5px 0px;
     text-align: center;
 }
 
@@ -86,10 +90,25 @@ article, section, aside {
 }
 
 .toplowerbar {
-    font-size: 35px;
+    font-size: 30px;
     background-color: #d0d2d3;
 }
 
+/* NAV */
+#sidenav {
+    position: absolute;
+    top: 45px;
+    z-index: 20;
+   
+    height: calc(100% - 105px);
+
+    /*max-width: 60em;
+    width: 100%;*/
+    padding: 10px;
+    padding-right: 30px;
+
+    background: #d0d2d3;
+}
 
 /* TILES */
 .eventTile {
