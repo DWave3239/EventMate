@@ -13,7 +13,7 @@ function moveNav(direction) {
         header  = document.getElementsByTagName('header')[0],
         underlay= document.getElementById('underlay'),
         stop    = header.getBoundingClientRect().left, 
-        step    = 20,
+        step    = 5,
         pos     = elem.getBoundingClientRect().left,
         id      = null;
 

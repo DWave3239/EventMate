@@ -2,6 +2,7 @@
 body{
     margin: 10px auto;
     max-width: 60em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 header, footer {
