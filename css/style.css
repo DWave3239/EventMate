@@ -1,12 +1,12 @@
 /* GENERAL PAGE LAYOUT */
 body{
     margin: 10px auto;
-    max-width: 60em;
+    max-width: 70em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 header, footer {
-    max-width: 60em;
+    max-width: 70em;
     width: 100%;
     position: fixed;
     margin: 0px;
@@ -34,7 +34,7 @@ main{
     bottom: 40px;
     max-height: calc(100% - 120px);
     
-    max-width: 60em;
+    max-width: 70em;
     width: 100%;
 
     overflow: auto;
@@ -82,8 +82,13 @@ article, section, aside {
 
 .centerHeaderDiv {
     height: 40px;
-    padding: 2.5px 0px;
-    text-align: center;
+    /* padding: 2.5px 0px; */
+    margin-top: 5px;
+    text-align: center; 
+}
+
+.centerHeaderDiv img{
+    vertical-align: middle;
 }
 
 .topbar, .toplowerbar {
@@ -91,7 +96,7 @@ article, section, aside {
 }
 
 .toplowerbar {
-    font-size: 30px;
+    font-size: 17px;
     background-color: #d0d2d3;
 }
 
