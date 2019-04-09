@@ -121,7 +121,7 @@ article, section, aside {
     background-color: #00000091;
     opacity: 50%;
     
-    max-width: 60em;
+    max-width: 70em;
     width: 100%;
     height: calc(100% - 45px);
 
