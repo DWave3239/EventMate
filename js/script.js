@@ -29,6 +29,8 @@ function moveNav(direction) {
         intervalId  = setInterval(frameOut, 1);
         underlay.style.display = 'none';
     }else{
+        if(pos < -elem.offsetWidth)
+            pos = -elem.offsetWidth;
         intervalId  = setInterval(frameIn, 1);
         underlay.style.display = 'block';
     }
