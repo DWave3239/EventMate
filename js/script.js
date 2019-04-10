@@ -1,9 +1,11 @@
 function changeRotation(element){
-    if(element.classList.contains('fa-rotate-90')){ // rotate back -> close nav
-        element.classList.remove('fa-rotate-90');
+    if(element.classList.contains('rotate-90')){ // rotate back -> close nav
+        element.classList.remove('rotate-90');
+        element.classList.add('rotate-0');
         moveNav('in');
     }else{ // rotate -> open nav
-        element.classList.add('fa-rotate-90');
+        element.classList.add('rotate-90');
+        element.classList.remove('rotate-0');
         moveNav('out');
     }
 }
