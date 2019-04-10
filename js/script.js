@@ -104,3 +104,34 @@ function checkPageSize(){
 
     console.log(viewportwidth + ", " + viewportheight);
 }
+
+function changeTheme(){
+    var elems = document.getElementsByTagName('link');
+    var found = false;
+    var elem;
+    for(i=0; i<elems.length && !found; i++){
+        if(elems[i].dataset.id){
+            elem = elems[i];
+            found = true;
+        }
+    }
+
+    var link = elem.href;
+
+    var filename = link.substr(link.lastIndexOf('/')+1);
+
+    var newFilename = "";
+    switch(filename){
+        case 'bg_bright.css':
+            newFilename = 'bg_dark.css';
+            break;
+        case 'bg_dark.css':
+            newFilename = 'bg_bright.css';
+            break;
+        default:
+            newFilename = filename;
+            break;
+    }
+
+    elem.href = elem.href.replace(filename, newFilename);
+}
