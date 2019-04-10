@@ -29,6 +29,8 @@ function moveNav(direction) {
         intervalId  = setInterval(frameOut, 1);
         underlay.style.display = 'none';
     }else{
+        if(pos < -elem.offsetWidth)
+            pos = -elem.offsetWidth;
         intervalId  = setInterval(frameIn, 1);
         underlay.style.display = 'block';
     }
@@ -103,4 +105,48 @@ function checkPageSize(){
     }
 
     console.log(viewportwidth + ", " + viewportheight);
+}
+
+function changeTheme(){
+    var elems = document.getElementsByTagName('link'),
+        menuIconImage = document.getElementById('menuIconImage'),
+        found = false,
+        elem = null,
+        link = null,
+        filename = null,
+        iconFilename = null,
+        newFilename = null,
+        newIconFilename = null;
+
+    for(i=0; i<elems.length && !found; i++){
+        if(elems[i].dataset.id){
+            elem = elems[i];
+            found = true;
+        }
+    }
+
+    link = elem.href;
+
+    filename = link.substr(link.lastIndexOf('/')+1);
+    
+    switch(filename){
+        case 'bg_bright.css':
+            newFilename = 'bg_dark.css';
+            newIconFilename = 'menu_bright.png';
+            iconFilename = 'menu_dark.png';
+            break;
+        case 'bg_dark.css':
+            newFilename = 'bg_bright.css';
+            newIconFilename = 'menu_dark.png';
+            iconFilename = 'menu_bright.png';
+            break;
+        default:
+            newFilename = filename;
+            newIconFilename = 'menu_dark.png';
+            iconFilename = 'menu_bright.png';
+            break;
+    }
+
+    elem.href = elem.href.replace(filename, newFilename);
+    menuIconImage.src = menuIconImage.src.replace(iconFilename, newIconFilename);
 }

@@ -3,7 +3,9 @@
     <head>
         <meta charset="utf-8"/>
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+        
+        <link rel="stylesheet" href="css/bg_bright.css" data-id="css">
         
         <link rel="stylesheet" href="css/style.css">
         <script src="js/script.js"></script>
@@ -17,7 +19,7 @@
     <body onload="initPageLayout()">
         <header>
             <div class="topbar">
-                <div class="menuIcon"><i class="icon fas fa-bars" onclick="changeRotation(this)"></i></div>
+                <div class="menuIcon"><img src="images/menu_dark.png" id="menuIconImage" onclick="changeRotation(this)" /></div>
                 <div class="brandDiv"></div>
                 <div class="headerSpacer">&nbsp;</div>
             </div>
@@ -36,6 +38,14 @@
                 <li><a href="#link_5.html"><button>Unterseite 4</button></a></li>    
                 <li><a href="#link_6.html"><button>Kontakt</button></a></li>
             </ul>
+            <div class="navbottom">
+                Settings<hr />
+                <label class="switch">
+                    <input type="checkbox" id="darkmode" onclick="changeTheme();">
+                    <span class="slider round"></span>
+                </label>
+                <label for="darkmode">Darkmode</label>
+            </div>
         </nav>
         <nav id="underlay">&nbsp;</nav>
         <main>

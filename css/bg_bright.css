@@ -1,0 +1,63 @@
+/* GENERAL */
+header {
+    background: #fff;
+}
+
+footer {
+    background-color: #d0d2d3;
+}
+  
+main{
+    background-color: #f1f3f4;
+}
+
+/* HEADER */
+.brandDiv {
+    background: url(../images/Header.png) no-repeat center center;
+}
+
+.toplowerbar {
+    background-color: #d0d2d3;
+}
+
+/* NAV */
+#sidenav {
+    background: #d0d2d3;
+}
+
+#underlay {
+    background-color: #00000091;
+}
+
+#sidenav > ul > li > a > button {
+    border: 1px solid black;
+    background: rgb(250, 250, 250);
+    color: black;
+}
+
+/* TILES */
+.eventTile {
+    border: 2px solid rgb(250, 250, 250);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(250, 250, 250);
+}
+
+.eventIconImg {
+    border: 1px solid black;
+}
+
+/* scroll bar */
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
