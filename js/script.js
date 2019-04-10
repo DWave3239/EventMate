@@ -106,9 +106,16 @@ function checkPageSize(){
 }
 
 function changeTheme(){
-    var elems = document.getElementsByTagName('link');
-    var found = false;
-    var elem;
+    var elems = document.getElementsByTagName('link'),
+        menuIconImage = document.getElementById('menuIconImage'),
+        found = false,
+        elem = null,
+        link = null,
+        filename = null,
+        iconFilename = null,
+        newFilename = null,
+        newIconFilename = null;
+
     for(i=0; i<elems.length && !found; i++){
         if(elems[i].dataset.id){
             elem = elems[i];
@@ -116,22 +123,28 @@ function changeTheme(){
         }
     }
 
-    var link = elem.href;
+    link = elem.href;
 
-    var filename = link.substr(link.lastIndexOf('/')+1);
-
-    var newFilename = "";
+    filename = link.substr(link.lastIndexOf('/')+1);
+    
     switch(filename){
         case 'bg_bright.css':
             newFilename = 'bg_dark.css';
+            newIconFilename = 'menu_bright.png';
+            iconFilename = 'menu_dark.png';
             break;
         case 'bg_dark.css':
             newFilename = 'bg_bright.css';
+            newIconFilename = 'menu_dark.png';
+            iconFilename = 'menu_bright.png';
             break;
         default:
             newFilename = filename;
+            newIconFilename = 'menu_dark.png';
+            iconFilename = 'menu_bright.png';
             break;
     }
 
     elem.href = elem.href.replace(filename, newFilename);
+    menuIconImage.src = menuIconImage.src.replace(iconFilename, newIconFilename);
 }
