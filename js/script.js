@@ -8,29 +8,35 @@ function changeRotation(element){
     }
 }
 
+var intervalId = null;
+
 function moveNav(direction) {
     var elem    = document.getElementById('sidenav'),
         header  = document.getElementsByTagName('header')[0],
         underlay= document.getElementById('underlay'),
         stop    = header.getBoundingClientRect().left, 
         step    = 5,
-        pos     = elem.getBoundingClientRect().left,
-        id      = null;
+        pos     = elem.getBoundingClientRect().left;
+
+    if(intervalId){
+        clearInterval(intervalId);
+        intervalId = null;
+    }
 
     if(direction === 'in'){
-        pos  = stop;
-        stop = -elem.offsetWidth;
-        step = -step;
-        id   = setInterval(frameOut, 1);
+        stop        = -elem.offsetWidth;
+        step        = -step;
+        intervalId  = setInterval(frameOut, 1);
         underlay.style.display = 'none';
     }else{
-        id   = setInterval(frameIn, 1);
+        intervalId  = setInterval(frameIn, 1);
         underlay.style.display = 'block';
     }
 
     function frameIn() {
         if (pos >= stop) {
-              clearInterval(id);
+              clearInterval(intervalId);
+              intervalId = null;
         } else {
             if(pos + step >= stop){
                 pos = stop;
@@ -43,7 +49,8 @@ function moveNav(direction) {
 
     function frameOut(){
         if (pos <= stop) {
-            clearInterval(id);
+            clearInterval(intervalId);
+            intervalId = null;
         } else {
             if(pos + step <= stop){
                 pos = stop;

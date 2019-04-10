@@ -82,7 +82,6 @@ article, section, aside {
 
 .centerHeaderDiv {
     height: 40px;
-    /* padding: 2.5px 0px; */
     margin-top: 5px;
     text-align: center; 
 }
@@ -107,9 +106,6 @@ article, section, aside {
     z-index: 20;
    
     height: calc(100% - 65px);
-
-    /*max-width: 60em;
-    width: 100%;*/
     padding: 10px;
 
     left: -100000px;
