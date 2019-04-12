@@ -134,18 +134,18 @@ function changeTheme(){
     switch(filename){
         case 'bg_bright.css':
             newFilename = 'bg_dark.css';
-            newIconFilename = 'menu_bright.png';
-            iconFilename = 'menu_dark.png';
+            newIconFilename = 'menu_dark.png';
+            iconFilename = 'menu_bright.png';
             break;
         case 'bg_dark.css':
             newFilename = 'bg_bright.css';
-            newIconFilename = 'menu_dark.png';
-            iconFilename = 'menu_bright.png';
+            newIconFilename = 'menu_bright.png';
+            iconFilename = 'menu_dark.png';
             break;
         default:
             newFilename = filename;
-            newIconFilename = 'menu_dark.png';
-            iconFilename = 'menu_bright.png';
+            newIconFilename = 'menu_bright.png';
+            iconFilename = 'menu_dark.png';
             break;
     }
 

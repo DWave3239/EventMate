@@ -12,12 +12,12 @@ footer {
 }
   
 main{
-    background-color: #0e0c0b;
+    background-color: #202020;
 }
 
 /* HEADER */
 .brandDiv {
-    background: url(../images/Header.png) no-repeat center center;
+    background: url(../images/header_dark.png) no-repeat center center;
 }
 
 .toplowerbar {
@@ -41,9 +41,9 @@ main{
 
 /* TILES */
 .eventTile {
-    border: 2px solid #050505;
+    border: 2px solid #111111;
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 4px 8px 0 rgba(255, 255, 255, 0.19);
-    background-color: #050505;
+    background-color: #111111;
 }
 
 .eventIconImg {
