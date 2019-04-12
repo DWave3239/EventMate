@@ -290,10 +290,10 @@ input:checked + .slider:before {
 
 .rotate-0 {
     transform: rotate(0deg);
-    transition: transform 0.3s linear;
+    transition: transform 0.2s linear;
 }
 
 .rotate-90 {
     transform: rotate(90deg);
-    transition: transform 0.3s linear;
+    transition: transform 0.2s linear;
 }
