@@ -11,6 +11,7 @@ function changeRotation(element){
 }
 
 var intervalId = null;
+var navVisible = false; // not visible
 
 function moveNav(direction) {
     var elem    = document.getElementById('sidenav'),
@@ -41,6 +42,7 @@ function moveNav(direction) {
         if (pos >= stop) {
               clearInterval(intervalId);
               intervalId = null;
+              navVisible = true;
         } else {
             if(pos + step >= stop){
                 pos = stop;
@@ -55,6 +57,7 @@ function moveNav(direction) {
         if (pos <= stop) {
             clearInterval(intervalId);
             intervalId = null;
+            navVisible = false;
         } else {
             if(pos + step <= stop){
                 pos = stop;
@@ -152,3 +155,12 @@ function changeTheme(){
     elem.href = elem.href.replace(filename, newFilename);
     menuIconImage.src = menuIconImage.src.replace(iconFilename, newIconFilename);
 }
+
+window.addEventListener('resize', function(){
+    if(navVisible){
+        var elem    = document.getElementById('sidenav'),
+            header  = document.getElementsByTagName('header')[0];
+
+        elem.style.left = header.getBoundingClientRect().left+'px';
+    }
+});
