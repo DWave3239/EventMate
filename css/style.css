@@ -17,7 +17,7 @@ header, footer {
 
 header{
     top: 0px;
-    height: 90px;
+    height: 135px;
 }
 
 footer{ 
@@ -91,7 +91,7 @@ article, section, aside {
     vertical-align: middle;
 }
 
-.topbar, .toplowerbar {
+.topbar, .toplowerbar, .map {
     height: 45px;
 }
 

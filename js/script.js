@@ -74,6 +74,7 @@ function initPageLayout(){
     elem.style.left = -elem.offsetWidth + 'px';
 
     checkPageSize();
+    getLocation();
 }
 
 function getPageWidth(){
