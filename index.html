@@ -10,11 +10,8 @@
         <link rel="stylesheet" href="css/style.css">
         
         <script src="js/script.js"></script>
-        <!--
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
-        <script src="js/geolocation.js"></script>
-        -->
-        
+        <script src="js/toast.js"></script>
+        <script src="js/geolocation.js"></script>     
         <title>EventMate - Find your Fun!</title>
     </head>
 
@@ -30,6 +27,8 @@
                 <div class="centerHeaderDiv">Near your location <img src="images/loc.png" style="height: 35px;"/></div>
                 <div class="filterIcon"><img src="images/filterOff.png" height="35px" onmouseover="this.src='images/filterOn.png'" onmouseout="this.src='images/filterOff.png'"/></div>
             </div>
+            <div class="map" id="map">Location </div>
+           
         </header>
         <nav id="sidenav">
             <div style="overflow: auto;">
@@ -52,6 +51,7 @@
             </div>
         </nav>
         <nav id="underlay">&nbsp;</nav>
+       
         <main>
             <article class="eventTile">
                 <div class="upperTile">
