@@ -17,7 +17,7 @@ header, footer {
 
 header{
     top: 0px;
-    height: 135px;
+    height: 90px;
 }
 
 footer{ 
@@ -26,6 +26,10 @@ footer{
     text-align: center;
 }
   
+map {
+    float:left;
+}
+
 main{
     position: absolute;
     top: 90px;
