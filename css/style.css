@@ -17,7 +17,7 @@ header, footer {
 
 header{
     top: 0px;
-    height: 135px;
+    height: 90px;
 }
 
 footer{ 
@@ -26,6 +26,10 @@ footer{
     text-align: center;
 }
   
+map {
+    float:left;
+}
+
 main{
     position: absolute;
     top: 90px;
@@ -125,17 +129,17 @@ article, section, aside {
     z-index: 15;
 }
 
-#sidenav > ul {
+#sidenav > div > ul {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
 }
 
-#sidenav > ul > li > a {
+#sidenav > div > ul > li > a {
     text-decoration: none;
 }
 
-#sidenav > ul > li > a > button {
+#sidenav > div > ul > li > a > button {
     border-radius: 2px;
     margin: 2px auto;
     text-align: center;

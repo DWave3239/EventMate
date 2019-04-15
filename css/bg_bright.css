@@ -29,7 +29,7 @@ main{
     background-color: #00000091;
 }
 
-#sidenav > ul > li > a > button {
+#sidenav > div > ul > li > a > button {
     border: 1px solid black;
     background: rgb(250, 250, 250);
     color: black;
