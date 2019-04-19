@@ -23,7 +23,7 @@
 
 /* eslint-disable max-len */
 
-const applicationServerPublicKey = 'BH8-hIchXKMI6AKSee8gD0hhPThRqaEhIEtMJwcTjEQhiOKdG-_2tTIO-6hOAK4kwg5M9Saedjxp4hVE-khhWxY';
+const applicationServerPublicKey = 'BGM1mEUYMKDxlgHdDGDeGN3yf00dxLu6Xy0vnxVK5dFzJXzHBHjAcQS2-MSwyESS85IC30EOMNhxU59s_pIhOVI';
 
 /* eslint-enable max-len */
 
@@ -62,7 +62,7 @@ self.addEventListener('notificationclick', function(event) {
   event.notification.close();
 
   event.waitUntil(
-    clients.openWindow('https://developers.google.com/web/')
+    clients.openWindow('https://developers.google.com/web/') //Set Action when clicking on Notification
   );
 });
 
