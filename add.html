@@ -37,8 +37,31 @@
                 <tr>
                     <td colspan=2>
                         <label class="cameraButton">
-                            <img src="images/upload.png">
-                            <input type="file" name="image" accept="image/*">
+                            <img src="images/upload.png" id="eventImg">
+                            <input type="file" name="image" accept="image/*" id="imgInp">
+                            <script>
+                            function readURL(input) {
+                                if (input.files && input.files[0]) {
+                                    var reader = new FileReader();
+                                    reader.onload = function (e) {
+                                        $('#eventImg').attr('src', e.target.result);
+                                    }
+                                    reader.readAsDataURL(input.files[0]);
+                                }
+                            }
+
+                            function handleImgSelect(evt) {
+                                var files = evt.target.files; // FileList object
+                                if (files && files[0]) {
+                                    var reader = new FileReader();
+                                    reader.onload = function (e) {
+                                        document.getElementById('eventImg').setAttribute('src', e.target.result);
+                                    }
+                                    reader.readAsDataURL(files[0]);
+                                }
+                            }
+                            document.getElementById('imgInp').addEventListener('change', handleImgSelect, false);
+                            </script>
                         </label>
                     </td>
                     </tr>
