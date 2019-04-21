@@ -35,6 +35,11 @@ main{
     color: black;
 }
 
+/* MODAL */
+#modalcontent {
+    background-color: #f1f3f4;
+}
+
 /* TILES */
 .eventTile {
     border: 2px solid rgb(250, 250, 250);

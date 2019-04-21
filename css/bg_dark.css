@@ -39,6 +39,11 @@ main{
     color: #d0d0d0;
 }
 
+/* MODAL */
+#modalcontent {
+    background-color: #202020;
+}
+
 /* TILES */
 .eventTile {
     border: 2px solid #111111;

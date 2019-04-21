@@ -23,6 +23,7 @@ header{
 footer{ 
     bottom: 0px;
     height: 40px;
+    z-index: 35;
     text-align: center;
 }
   
@@ -107,16 +108,16 @@ article, section, aside {
 #sidenav {
     position: absolute;
     top: 45px;
-    z-index: 20;
+    z-index: 30;
    
-    height: calc(100% - 65px);
+    height: calc(100% - 105px);
     padding: 10px;
 
     left: -100000px;
 }
 
 #underlay {
-    opacity: 50%;
+    opacity: 0.5;
     
     max-width: 70em;
     width: 100%;
@@ -126,7 +127,7 @@ article, section, aside {
 
     display: none;
     position: absolute;
-    z-index: 15;
+    z-index: 25;
 }
 
 #sidenav > div > ul {
@@ -151,6 +152,71 @@ article, section, aside {
     position: absolute;
     bottom: 0px;
     margin: 10px 0;
+}
+
+/* MODAL */
+main#modal {
+    position: absolute;
+    max-height: calc(100% - 45px);
+
+    max-width: 70em;
+    width: 100%;
+
+    display: none;
+
+    z-index: 20;
+}
+
+#modalunderlay {
+    background: black;
+    opacity: 0.5;
+
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#modalcontent {
+    position: absolute;
+
+    margin: 20px;
+    
+    height: calc(100% - 40px);
+    max-width: 68em;
+
+    display: block;
+}
+
+#modal .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.3;
+}
+
+#modal .close:hover {
+    opacity: 1;
+}
+
+#modal .close:before, #modal .close:after {
+    position: absolute;
+    left: 8px;
+    content: ' '; /* anzuzeigender content */
+    height: 21px; /* element höhe */
+    width: 2px; /* strichdicke */
+    background-color: #333;
+}
+
+#modal .close:before {
+    transform: rotate(45deg);
+}
+
+#modal .close:after {
+    transform: rotate(-45deg);
 }
 
 /* TILES */

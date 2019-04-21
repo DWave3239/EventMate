@@ -69,11 +69,30 @@ function moveNav(direction) {
     }
 }
 
+var modalHeight;
+
 function initPageLayout(){
+    // sidenav
     var elem = document.getElementById('sidenav');
     elem.style.left = -elem.offsetWidth + 'px';
 
-    checkPageSize();
+    // modal
+    elem = document.getElementById('modal');
+    elem.style.display = 'block';
+    modalHeight = elem.getBoundingClientRect().bottom - elem.getBoundingClientRect().top;
+    elem.style.display = 'none';
+    elem.style.top = (getPageHeight() + 10) + 'px';
+    elem.style.bottom = -(10 + modalHeight) + 'px';
+
+    // modal-links
+    var linkElements = document.getElementsByClassName('modallink');
+    for(let el of linkElements){
+        el.addEventListener("click", function(event) {
+            event.preventDefault();
+            openModal(el);
+        });
+    }
+
     getLocation();
 }
 
@@ -91,26 +110,6 @@ function getPageHeight(){
     if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
         return document.documentElement.clientHeight;
     return document.getElementsByTagName('body')[0].clientHeight;
-}
-
-function checkPageSize(){
-    var viewportwidth;
-    var viewportheight;
-    
-    // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
-    
-    if (typeof window.innerWidth != 'undefined'){
-        viewportwidth = window.innerWidth;
-        viewportheight = window.innerHeight;
-    }else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0){ // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
-        viewportwidth = document.documentElement.clientWidth;
-        viewportheight = document.documentElement.clientHeight;
-    }else{ // older versions of IE
-        viewportwidth = document.getElementsByTagName('body')[0].clientWidth;
-        viewportheight = document.getElementsByTagName('body')[0].clientHeight;
-    }
-
-    console.log(viewportwidth + ", " + viewportheight);
 }
 
 function changeTheme(){
@@ -165,3 +164,69 @@ window.addEventListener('resize', function(){
         elem.style.left = header.getBoundingClientRect().left+'px';
     }
 });
+
+function closeModal(elem){
+    var modal       = elem.parentElement.parentElement,
+        stop        = getPageHeight()-10,
+        pos         = modal.getBoundingClientRect().top,
+        pos2        = getPageHeight() - modal.getBoundingClientRect().bottom,
+        step        = getPageHeight()/10,
+        intervalId  = null;
+    
+    modal.style.top     = pos  + 'px';
+    modal.style.bottom  = pos2 + 'px';
+
+    intervalId = setInterval(move, 1);
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+
+    function move(){
+        if (pos >= stop) {
+            document.getElementsByTagName('body')[0].style.overflow = 'auto';
+            modal.style.display = 'none';
+            clearInterval(intervalId);
+            intervalId = null;
+        } else {
+            if(pos + step >= stop){
+                pos  = stop;
+            }else{
+                pos  += step;
+                pos2 -= step;
+            }
+            modal.style.top    = pos  + 'px';
+            modal.style.bottom = pos2  + 'px';
+        }
+    }
+}
+
+function openModal(){
+    var modal       = document.getElementById('modal');
+        modal.style.display = 'block';
+    var stop        = 45,
+        pos         = modal.getBoundingClientRect().top,
+        pos2        = getPageHeight() - modal.getBoundingClientRect().bottom,
+        step        = -getPageHeight()/10,
+        intervalId  = null;
+
+    modal.style.display = 'block';
+
+    intervalId = setInterval(move, 1);
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+
+    function move(){
+        if (pos <= stop) {
+            document.getElementsByTagName('body')[0].style.overflow = 'auto';
+            clearInterval(intervalId);
+            intervalId = null;
+            modal.style.bottom = '40px';
+        } else {
+            if(pos + step <= stop){
+                pos  = stop;
+            }else{
+                pos  += step;
+                pos2 -= step;
+            }
+            modal.style.top    = pos  + 'px';
+            modal.style.bottom = pos2  + 'px';
+        }
+    }
+}
