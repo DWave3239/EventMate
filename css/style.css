@@ -185,6 +185,7 @@ main#modal {
     
     height: calc(100% - 40px);
     max-width: 68em;
+    min-width: calc(100% - 40px);
 
     display: block;
 }
@@ -235,6 +236,10 @@ main#modal {
 
 .upperTile {
     overflow: auto;
+}
+
+.modallink {
+    font-weight: bold;
 }
 
 .lowerTile {

@@ -89,6 +89,7 @@ function initPageLayout(){
     for(let el of linkElements){
         el.addEventListener("click", function(event) {
             event.preventDefault();
+            loadModal(el.dataset.eventid);
             openModal(el);
         });
     }
@@ -229,4 +230,17 @@ function openModal(){
             modal.style.bottom = pos2  + 'px';
         }
     }
+}
+
+function loadModal(id){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var json = JSON.parse(this.responseText);
+            console.log(json);
+            document.getElementById('modalcontentpane').innerHTML = json.contents;
+        }
+    };
+    xhttp.open("GET", id+".json", true);
+    xhttp.send();
 }
