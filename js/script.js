@@ -93,6 +93,7 @@ function initPageLayout(){
     for(let el of linkElements){
         el.addEventListener("click", function(event) {
             event.preventDefault();
+            document.getElementById('map').innerHTML = 'clicked ' + el.dataset.eventid; 
             loadModal(el.dataset.eventid);
             openModal(el);
         });
