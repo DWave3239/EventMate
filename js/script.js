@@ -75,6 +75,7 @@ function initPageLayout(){
 
     checkPageSize();
     getLocation();
+    getCoordinatesOfAddress("Elmberg 8", "4263", "Windhaag");
 }
 
 function getPageWidth(){
