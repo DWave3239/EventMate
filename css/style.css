@@ -116,7 +116,7 @@ article, section, aside {
     left: -100000px;
 }
 
-#underlay {
+#sidenavunderlay {
     opacity: 0.5;
     
     max-width: 70em;
@@ -205,11 +205,10 @@ main#modal {
 
 #modal .close:before, #modal .close:after {
     position: absolute;
-    left: 8px;
+    left: 9px;
     content: ' '; /* anzuzeigender content */
     height: 21px; /* element höhe */
     width: 2px; /* strichdicke */
-    background-color: #333;
 }
 
 #modal .close:before {

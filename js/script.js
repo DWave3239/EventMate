@@ -16,7 +16,7 @@ var navVisible = false; // not visible
 function moveNav(direction) {
     var elem    = document.getElementById('sidenav'),
         header  = document.getElementsByTagName('header')[0],
-        underlay= document.getElementById('underlay'),
+        underlay= document.getElementById('sidenavunderlay'),
         stop    = header.getBoundingClientRect().left, 
         step    = getPageWidth()/50,
         pos     = elem.getBoundingClientRect().left;
@@ -75,6 +75,10 @@ function initPageLayout(){
     // sidenav
     var elem = document.getElementById('sidenav');
     elem.style.left = -elem.offsetWidth + 'px';
+
+    document.getElementById('sidenavunderlay').addEventListener("click", function(event) {
+        changeRotation(document.getElementById('menuIconImage'));
+    });
 
     // modal
     elem = document.getElementById('modal');
@@ -237,7 +241,6 @@ function loadModal(id){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
-            console.log(json);
             document.getElementById('modalcontentpane').innerHTML = json.contents;
         }
     };

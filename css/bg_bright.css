@@ -25,7 +25,7 @@ main{
     background: #d0d2d3;
 }
 
-#underlay {
+#sidenavunderlay {
     background-color: #00000091;
 }
 
@@ -38,6 +38,14 @@ main{
 /* MODAL */
 #modalcontent {
     background-color: #f1f3f4;
+}
+
+#modal .close {
+    border: 1px solid #333;
+}
+
+#modal .close:before, #modal .close:after {
+    background-color: #333;
 }
 
 /* TILES */
