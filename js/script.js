@@ -18,7 +18,7 @@ function moveNav(direction) {
         header  = document.getElementsByTagName('header')[0],
         underlay= document.getElementById('underlay'),
         stop    = header.getBoundingClientRect().left, 
-        step    = 5 + getPageWidth()/1920 * 15,
+        step    = getPageWidth()/50,
         pos     = elem.getBoundingClientRect().left;
 
     if(intervalId){
