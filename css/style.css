@@ -199,8 +199,8 @@ main#modal {
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     opacity: 0.3;
 }
 
@@ -210,9 +210,9 @@ main#modal {
 
 #modal .close:before, #modal .close:after {
     position: absolute;
-    left: 9px;
+    left: 14px;
     content: ' '; /* anzuzeigender content */
-    height: 21px; /* element höhe */
+    height: 31px; /* element höhe */
     width: 2px; /* strichdicke */
 }
 
