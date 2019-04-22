@@ -96,12 +96,39 @@ article, section, aside {
     vertical-align: middle;
 }
 
-.topbar, .toplowerbar, .map {
+.topbar, .toplowerbar {
     height: 45px;
 }
 
 .toplowerbar {
     font-size: 25px;
+}
+
+.searchbar {
+    top: 90px;
+    position: absolute;
+    height: 30px;
+    overflow: visible;
+    z-index: 11;
+}
+.result {
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    overflow: hidden;
+}
+.resultEntry {
+    border-style: hidden;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: grey;  
+    padding: 5px;  
+}
+.resultEntry:hover {
+    background-color: lightgray;   
 }
 
 /* NAV */

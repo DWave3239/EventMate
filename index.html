@@ -27,17 +27,10 @@
             <div class="toplowerbar">
                 <div class="headerSpacer">&nbsp;</div>
                 <div class="centerHeaderDiv">Near your location                     
-                    <img src="images/loc.png" style="height: 35px;"/> 
-                    <input id="locationName"class="locationName"  type="text" oninput="getCoordinates(this.value)">
-                    <datalist id="locations">
-                            <option>Linz</option>
-                            <option>Wien</option>
-                            <option>Paris</option>
-                            <option>test</option>
-                    </datalist> 
+                    <img src="images/loc.png" style="height: 35px;"/>  
                 </div>
                 <div class="filterIcon"><img src="images/filterOff.png" height="35px" onmouseover="this.src='images/filterOn.png'" onmouseout="this.src='images/filterOff.png'"/></div>
-            </div>           
+            </div>         
         </header>
         <nav id="sidenav">
             <div style="overflow: auto;">
@@ -60,7 +53,10 @@
             </div>
         </nav>
         <nav id="sidenavunderlay">&nbsp;</nav>
-       
+        <div class="searchbar">                
+            <input id="locationName"class="locationName"  type="text" oninput="getCoordinates(this.value)">
+            <div id="result" class="result"></div>
+        </div>  
         <main>
             <div class="map eventTile" id="map">Location </div>
             <article class="eventTile">
