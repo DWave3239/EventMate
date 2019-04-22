@@ -404,3 +404,7 @@ td img{
     margin-right: auto;
 
 }
+
+table td[data-href] {
+    cursor: pointer;
+}
