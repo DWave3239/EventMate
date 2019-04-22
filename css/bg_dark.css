@@ -29,7 +29,7 @@ main{
     background: #2f2d2c;
 }
 
-#underlay {
+#sidenavunderlay {
     background-color: #ffffff91;
 }
 
@@ -37,6 +37,19 @@ main{
     border: 1px solid white;
     background: #050505;
     color: #d0d0d0;
+}
+
+/* MODAL */
+#modalcontent {
+    background-color: #202020;
+}
+
+#modal .close {
+    border: 1px solid #ccc;
+}
+
+#modal .close:before, #modal .close:after {
+    background-color: #ccc;
 }
 
 /* TILES */

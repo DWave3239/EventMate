@@ -59,7 +59,7 @@
                 <label for="darkmode">Darkmode</label>
             </div>
         </nav>
-        <nav id="underlay">&nbsp;</nav>
+        <nav id="sidenavunderlay">&nbsp;</nav>
        
         <main>
             <div class="map eventTile" id="map">Location </div>
@@ -69,7 +69,7 @@
                         <img src="images/nomaam.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                    <span class="name"><a href="detail.html">no|maam Mensafest</a></span><br />
+                    <span class="name"><a href="#"data-eventId="eventDetail1" class="modallink">no|maam Mensafest</a></span><br />
                     <span class="location">JKU Mensa, Linz, AT</span><br />
                     <span class="time">Do, 28.03.2019 um 20:30</span>
                     </div>
@@ -85,7 +85,7 @@
                         <img src="images/teconomy.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                        <span class="name"><a href="detail.html">Teconomy Linz 2019</a></span><br />
+                        <span class="name"><a href="#"data-eventId="eventDetail2" class="modallink">Teconomy Linz 2019</a></span><br />
                         <span class="location">Keplergeb. JKU, Linz, AT</span><br />
                         <span class="time">Mi, 03.04.2019 um 09:00</span>
                     </div>
@@ -101,7 +101,7 @@
                         <img src="images/LOGO_rot auf schwarz.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                        <span class="name"><a href="detail.html">Earthsplitter Teaser Party</a></span><br />
+                        <span class="name"><a href="#"data-eventId="eventDetail3" class="modallink">Earthsplitter Teaser Party</a></span><br />
                         <span class="location">Linz, AT</span><br />
                         <span class="time">Mo, 01.04.2019 um 11:00</span>
                     </div>
@@ -117,7 +117,7 @@
                         <img src="images/nomaam.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                    <span class="name"><a href="detail.html">no|maam Mensafest</a></span><br />
+                    <span class="name"><a href="#"data-eventId="eventDetail1" class="modallink">no|maam Mensafest</a></span><br />
                     <span class="location">JKU Mensa, Linz, AT</span><br />
                     <span class="time">Do, 28.03.2019 um 20:30</span>
                     </div>
@@ -133,7 +133,7 @@
                         <img src="images/teconomy.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                        <span class="name"><a href="detail.html">Teconomy Linz 2019</a></span><br />
+                        <span class="name"><a href="#"data-eventId="eventDetail2" class="modallink">Teconomy Linz 2019</a></span><br />
                         <span class="location">Keplergeb. JKU, Linz, AT</span><br />
                         <span class="time">Mi, 03.04.2019 um 09:00</span>
                     </div>
@@ -149,7 +149,7 @@
                         <img src="images/LOGO_rot auf schwarz.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                        <span class="name"><a href="detail.html">Earthsplitter Teaser Party</a></span><br />
+                        <span class="name"><a href="#"data-eventId="eventDetail3" class="modallink">Earthsplitter Teaser Party</a></span><br />
                         <span class="location">Linz, AT</span><br />
                         <span class="time">Mo, 01.04.2019 um 11:00</span>
                     </div>
@@ -159,6 +159,14 @@
                     <p>Seit ihr bereit eure Gehirne zu überladen und euch bei einem Musikerlebnis der ganz heftigen Art teilzunehmen? Dann bist du hier genau richtig und wirst jede Menge Anschluss und eine neue Lieblingsband kennenlernen. Sei dabei!</p>
                 </div>
             </article>
+        </main>
+        <main id="modal">
+            <div id="modalunderlay"></div>
+            <div id="modalcontent">
+                <div class="close" onclick="closeModal(this)"></div>
+                <div id="modalcontentpane">
+                </div>
+            </div>
         </main>
 
         <footer>
