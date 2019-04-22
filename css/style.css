@@ -190,6 +190,11 @@ main#modal {
     display: block;
 }
 
+#modalcontentpane {
+    height: calc(100% - 40px);
+    overflow: auto;
+}
+
 #modal .close {
     position: absolute;
     right: 10px;
