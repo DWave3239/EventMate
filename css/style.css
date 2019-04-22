@@ -26,6 +26,10 @@ footer{
     z-index: 35;
     text-align: center;
 }
+
+footer p {
+    margin-top: 12px;
+}
   
 map {
     float:left;
