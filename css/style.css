@@ -241,10 +241,10 @@ main#modal {
 .upperTile {
     overflow: auto;
 }
-
+/* 
 .modallink {
     font-weight: bold;
-}
+} */
 
 .lowerTile {
     width: 100%;
