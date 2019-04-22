@@ -250,9 +250,9 @@ function loadModal(id){
     xhttp.send();
 }
 
-$(function(){
+$(function(){       
     $('*[data-href]').click(function(){
-        window.location = $(this).data('href');
+        window.open($(this).data('href'));
         return false;
     });
 });
