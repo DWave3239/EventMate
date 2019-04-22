@@ -26,6 +26,10 @@ footer{
     z-index: 35;
     text-align: center;
 }
+
+footer p {
+    margin-top: 12px;
+}
   
 map {
     float:left;
@@ -226,8 +230,8 @@ main#modal {
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     opacity: 0.3;
 }
 
@@ -237,9 +241,9 @@ main#modal {
 
 #modal .close:before, #modal .close:after {
     position: absolute;
-    left: 9px;
+    left: 14px;
     content: ' '; /* anzuzeigender content */
-    height: 21px; /* element höhe */
+    height: 31px; /* element höhe */
     width: 2px; /* strichdicke */
 }
 
@@ -268,10 +272,10 @@ main#modal {
 .upperTile {
     overflow: auto;
 }
-
+/* 
 .modallink {
     font-weight: bold;
-}
+} */
 
 .lowerTile {
     width: 100%;
@@ -290,6 +294,10 @@ main#modal {
     max-height: 80px;
 
     border-radius: 50%;
+}
+
+.name {
+    font-weight: bold;
 }
 
 .description {
@@ -430,4 +438,12 @@ td img{
     margin-left: auto;
     margin-right: auto;
 
+}
+
+/* table td[data-href] {
+    cursor: pointer;
+} */
+
+table td[onClick] {
+    cursor: pointer;
 }

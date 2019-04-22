@@ -1,172 +1,196 @@
 <!doctype html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8"/>
-        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-        
-        <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon' />
 
-        <link rel="stylesheet" href="css/bg_bright.css" data-id="css">
-        <link rel="stylesheet" href="css/style.css">
-        
-        <script src="js/script.js"></script>
-        <script src="js/toast.js"></script>
-        <script src="js/geolocation.js"></script> 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>    
+<head>
+    <meta charset="utf-8" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-        <title>EventMate - Find your Fun!</title>
-    </head>
+    <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon' />
+    <link rel="stylesheet" href="css/bg_bright.css" data-id="css">
+    <link rel="stylesheet" href="css/style.css">
 
-    <body onload="initPageLayout()">
-        <header>
-            <div class="topbar">
-                <div class="menuIcon"><img src="images/menu_bright.png" id="menuIconImage" class="rotate-0" onclick="changeRotation(this)" /></div>
-                <div class="brandDiv"></div>
-                <div class="headerSpacer">&nbsp;</div>
+    <!-- Order of libraries is important! -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/geolocation.js"></script>
+
+    <title>EventMate - Find your Fun!</title>
+</head>
+<body onload="initPageLayout()">
+    <header>
+        <div class="topbar">
+            <div class="menuIcon"><img src="images/menu_bright.png" id="menuIconImage" class="rotate-0"
+                    onclick="changeRotation(this)" /></div>
+            <div class="brandDiv"></div>
+            <div class="headerSpacer">&nbsp;</div>
+        </div>
+        <div class="toplowerbar">
+            <div class="headerSpacer">&nbsp;</div>
+            <div class="centerHeaderDiv">Near your location
+                <img src="images/loc.png" style="height: 35px;" />
             </div>
-            <div class="toplowerbar">
-                <div class="headerSpacer">&nbsp;</div>
-                <div class="centerHeaderDiv">Near your location                     
-                    <img src="images/loc.png" style="height: 35px;"/>  
-                </div>
-                <div class="filterIcon"><img src="images/filterOff.png" height="35px" onmouseover="this.src='images/filterOn.png'" onmouseout="this.src='images/filterOff.png'"/></div>
-            </div>         
-        </header>
-        <nav id="sidenav">
-            <div style="overflow: auto;">
-                <ul>
-                    <li><a href="index.html"><button>Near your location</button></a></li>
-                    <li><a href="#link_2.html"><button>Your events</button></a></li>
-                    <li><a href="#link_3.html"><button>Planned to attend</button></a></li> 
-                    <li><a href="add.html"><button>Add new event</button></a></li> 
-                    <li><a href="notificationTest.html"><button>Notification Testpage</button></a></li>    
-                    <li><a href="about.html"><button>About</button></a></li>
-                </ul>
-            </div>
-            <div class="navbottom">
-                Settings<hr />
-                <label class="switch">
-                    <input type="checkbox" id="darkmode" onclick="changeTheme();">
-                    <span class="slider round"></span>
-                </label>
-                <label for="darkmode">Darkmode</label>
-            </div>
-        </nav>
-        <nav id="sidenavunderlay">&nbsp;</nav>
-        <div class="searchbar">                
-            <input id="locationName"class="locationName"  type="text" oninput="getCoordinates(this.value)">
-            <div id="result" class="result"></div>
-        </div>  
-        <main>
-            <div class="map eventTile" id="map">Location </div>
-            <article class="eventTile">
+            <div class="filterIcon"><img src="images/filterOff.png" height="35px"
+                    onmouseover="this.src='images/filterOn.png'" onmouseout="this.src='images/filterOff.png'" /></div>
+        </div>
+    </header>
+    <nav id="sidenav">
+        <div style="overflow: auto;">
+            <ul>
+                <li><a href="index.html"><button>Near your location</button></a></li>
+                <li><a href="#link_2.html"><button>Your events</button></a></li>
+                <li><a href="#link_3.html"><button>Planned to attend</button></a></li>
+                <li><a href="add.html"><button>Add new event</button></a></li>
+                <li><a href="notificationTest.html"><button>Notification Testpage</button></a></li>
+                <li><a href="about.html"><button>About</button></a></li>
+            </ul>
+        </div>
+        <div class="navbottom">
+            Settings
+            <hr />
+            <label class="switch">
+                <input type="checkbox" id="darkmode" onclick="changeTheme();">
+                <span class="slider round"></span>
+            </label>
+            <label for="darkmode">Darkmode</label>
+        </div>
+    </nav>
+    <nav id="sidenavunderlay">&nbsp;</nav>
+    <div class="searchbar">                
+        <input id="locationName"class="locationName"  type="text" oninput="getCoordinates(this.value)">
+        <div id="result" class="result"></div>
+    </div>  
+    <main>
+        <div class="map eventTile" id="map">Location </div>
+        <article class="eventTile">
+            <div class="modallink" data-eventId="eventDetail1">
                 <div class="upperTile">
                     <div class="floater eventIcon">
                         <img src="images/nomaam.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                    <span class="name"><a href="#"data-eventId="eventDetail1" class="modallink">no|maam Mensafest</a></span><br />
-                    <span class="location">JKU Mensa, Linz, AT</span><br />
-                    <span class="time">Do, 28.03.2019 um 20:30</span>
+                        <span class="name">no|maam Mensafest</span><br />
+                        <span class="location">JKU Mensa, Linz, AT</span><br />
+                        <span class="time">Do, 28.03.2019 um 20:30</span>
                     </div>
                     <div class="clearer"></div>
                 </div>
                 <div class="lowerTile">
-                    <p>Schon diesen Donnerstag steigt wieder die Party des Semesters! Wir empfangen euch ab 20:30 Uhr im Mensakeller mit einer halben Stunde Freibier!!</p>
+                    <p>Schon diesen Donnerstag steigt wieder die Party des Semesters! Wir empfangen euch ab 20:30 Uhr im
+                        Mensakeller mit einer halben Stunde Freibier!!</p>
                 </div>
-            </article>
-            <article class="eventTile">
+            </div>
+        </article>
+        <article class="eventTile">
+            <div class="modallink" data-eventId="eventDetail2">
                 <div class="upperTile">
                     <div class="floater eventIcon">
                         <img src="images/teconomy.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                        <span class="name"><a href="#"data-eventId="eventDetail2" class="modallink">Teconomy Linz 2019</a></span><br />
+                        <span class="name">Teconomy Linz 2019</span><br />
                         <span class="location">Keplergeb. JKU, Linz, AT</span><br />
                         <span class="time">Mi, 03.04.2019 um 09:00</span>
                     </div>
                     <div class="clearer"></div>
                 </div>
                 <div class="lowerTile">
-                    <p>Neben zahlreichen Firmen erwartet dich u.a. diese Programm:<br>Start-Ups, Job Wall, TEC Talks, TEC Snack, CV Check, Social Media Check, Bewerbungsfotos</p>
+                    <p>Neben zahlreichen Firmen erwartet dich u.a. diese Programm:<br>Start-Ups, Job Wall, TEC Talks,
+                        TEC Snack, CV Check, Social Media Check, Bewerbungsfotos</p>
                 </div>
-            </article>
-            <article class="eventTile">
+            </div>
+        </article>
+        <article class="eventTile">
+            <div class="modallink" data-eventId="eventDetail3">
                 <div class="upperTile">
                     <div class="floater eventIcon">
                         <img src="images/LOGO_rot auf schwarz.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                        <span class="name"><a href="#"data-eventId="eventDetail3" class="modallink">Earthsplitter Teaser Party</a></span><br />
+                        <span class="name">Earthsplitter Teaser Party</span><br />
                         <span class="location">Linz, AT</span><br />
                         <span class="time">Mo, 01.04.2019 um 11:00</span>
                     </div>
                     <div class="clearer"></div>
                 </div>
                 <div class="lowerTile">
-                    <p>Seit ihr bereit eure Gehirne zu überladen und euch bei einem Musikerlebnis der ganz heftigen Art teilzunehmen? Dann bist du hier genau richtig und wirst jede Menge Anschluss und eine neue Lieblingsband kennenlernen. Sei dabei!</p>
+                    <p>Seid ihr bereit eure Gehirne zu überladen und euch bei einem Musikerlebnis der ganz heftigen Art
+                        teilzunehmen? Dann bist du hier genau richtig und wirst jede Menge Anschluss und eine neue
+                        Lieblingsband kennenlernen. Sei dabei!</p>
                 </div>
-            </article>
-            <article class="eventTile">
-                <div class="upperTile">
+            </div>
+        </article>
+        <article class="eventTile">
+            <div class="upperTile">
+                <div class="modallink" data-eventId="eventDetail1">
                     <div class="floater eventIcon">
                         <img src="images/nomaam.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                    <span class="name"><a href="#"data-eventId="eventDetail1" class="modallink">no|maam Mensafest</a></span><br />
-                    <span class="location">JKU Mensa, Linz, AT</span><br />
-                    <span class="time">Do, 28.03.2019 um 20:30</span>
+                        <span class="name">no|maam Mensafest</span><br />
+                        <span class="location">JKU Mensa, Linz, AT</span><br />
+                        <span class="time">Do, 28.03.2019 um 20:30</span>
                     </div>
                     <div class="clearer"></div>
                 </div>
                 <div class="lowerTile">
-                    <p>Schon diesen Donnerstag steigt wieder die Party des Semesters! Wir empfangen euch ab 20:30 Uhr im Mensakeller mit einer halben Stunde Freibier!</p>
+                    <p>Schon diesen Donnerstag steigt wieder die Party des Semesters! Wir empfangen euch ab 20:30 Uhr im
+                        Mensakeller mit einer halben Stunde Freibier!</p>
                 </div>
-            </article>
-            <article class="eventTile">
+            </div>
+        </article>
+        <article class="eventTile">
+            <div class="modallink" data-eventId="eventDetail2">
                 <div class="upperTile">
                     <div class="floater eventIcon">
                         <img src="images/teconomy.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                        <span class="name"><a href="#"data-eventId="eventDetail2" class="modallink">Teconomy Linz 2019</a></span><br />
+                        <span class="name">Teconomy Linz 2019</span><br />
                         <span class="location">Keplergeb. JKU, Linz, AT</span><br />
                         <span class="time">Mi, 03.04.2019 um 09:00</span>
                     </div>
                     <div class="clearer"></div>
                 </div>
                 <div class="lowerTile">
-                    <p>Neben zahlreichen Firmen erwartet dich u.a. diese Programm:<br>Start-Ups, Job Wall, TEC Talks, TEC Snack, CV Check, Social Media Check, Bewerbungsfotos</p>
+                    <p>Neben zahlreichen Firmen erwartet dich u.a. diese Programm:<br>Start-Ups, Job Wall, TEC Talks,
+                        TEC Snack, CV Check, Social Media Check, Bewerbungsfotos</p>
                 </div>
-            </article>
-            <article class="eventTile">
+            </div>
+        </article>
+        <article class="eventTile">
+            <div class="modallink" data-eventId="eventDetail3">
                 <div class="upperTile">
                     <div class="floater eventIcon">
                         <img src="images/LOGO_rot auf schwarz.png" class="eventIconImg">
                     </div>
                     <div class="floater description">
-                        <span class="name"><a href="#"data-eventId="eventDetail3" class="modallink">Earthsplitter Teaser Party</a></span><br />
+                        <span class="name">Earthsplitter Teaser Party</span><br />
                         <span class="location">Linz, AT</span><br />
                         <span class="time">Mo, 01.04.2019 um 11:00</span>
                     </div>
                     <div class="clearer"></div>
                 </div>
                 <div class="lowerTile">
-                    <p>Seit ihr bereit eure Gehirne zu überladen und euch bei einem Musikerlebnis der ganz heftigen Art teilzunehmen? Dann bist du hier genau richtig und wirst jede Menge Anschluss und eine neue Lieblingsband kennenlernen. Sei dabei!</p>
-                </div>
-            </article>
-        </main>
-        <main id="modal">
-            <div id="modalunderlay"></div>
-            <div id="modalcontent">
-                <div class="close" onclick="closeModal(this)"></div>
-                <div id="modalcontentpane">
+                    <p>Seid ihr bereit eure Gehirne zu überladen und euch bei einem Musikerlebnis der ganz heftigen Art
+                        teilzunehmen? Dann bist du hier genau richtig und wirst jede Menge Anschluss und eine neue
+                        Lieblingsband kennenlernen. Sei dabei!</p>
                 </div>
             </div>
-        </main>
+        </article>
+    </main>
+    <main id="modal">
+        <div id="modalunderlay"></div>
+        <div id="modalcontent">
+            <div class="close" onclick="closeModal(this)"></div>
+            <div id="modalcontentpane">
+            </div>
+        </div>
+    </main>
 
-        <footer>
-            <p>© 2019 by Team EventMate</p>
-        </footer>
-    </body>
+    <footer>
+        <p>© 2019 by Team EventMate</p>
+    </footer>
+</body>
+
 </html>
