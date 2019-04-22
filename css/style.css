@@ -265,6 +265,10 @@ main#modal {
     border-radius: 50%;
 }
 
+.name {
+    font-weight: bold;
+}
+
 .description {
     padding: 7px 0px;
     font-size: 20px;
@@ -405,6 +409,10 @@ td img{
 
 }
 
-table td[data-href] {
+/* table td[data-href] {
+    cursor: pointer;
+} */
+
+table td[onClick] {
     cursor: pointer;
 }
