@@ -1,4 +1,4 @@
-var x, lat, lon;
+var x, lat, lon, responseTemp;
 var apiKey = "1457ea73a4146f";
 function getLocation() {
   x = document.getElementById("map");
@@ -76,7 +76,7 @@ function getCoordinates(query) {
       
       $.ajax(settings).done(function (response) {
         console.log(response);
-
+        responseTemp = response;
         var options='';
         for(var i = 0; i < response.length; i++)
             options += '<div class="resultEntry" onclick="clickLocation(this)" id="'+i+'">'+response[i].display_name+'</div>';
@@ -86,7 +86,9 @@ function getCoordinates(query) {
 
 function clickLocation(item) { //TODO
   document.getElementById("result").innerHTML = "";
-  console.log($(item).attr("id"));
+  document.getElementById("locationName").value = responseTemp[$(item).attr("id")].display_name;
+  lat = responseTemp[$(item).attr("id")].lat;
+  lon = responseTemp[$(item).attr("id")].lon;
 }
 
 function getCoordinatesOfAddress(street, postalcode, city) {
