@@ -88,6 +88,10 @@ function initPageLayout(){
     elem.style.top = (getPageHeight() + 10) + 'px';
     elem.style.bottom = -(10 + modalHeight) + 'px';
 
+    // add button
+    elem = document.getElementById('addButton');
+    elem.style.left = (document.getElementsByTagName('body')[0].getBoundingClientRect().right - 70) + 'px';
+
     registerEvents();
 
     getLocation();
@@ -196,6 +200,10 @@ window.addEventListener('resize', function(){
             header  = document.getElementsByTagName('header')[0];
 
         elem.style.left = header.getBoundingClientRect().left+'px';
+    }
+    if(document.getElementById('addButton')){
+        var btn = document.getElementById('addButton');
+        btn.style.left = (docuemnt.getElementsByTagName('body')[0].getBoundingClientRect().right - 70) + 'px';
     }
 });
 
