@@ -88,28 +88,59 @@ function initPageLayout(){
     elem.style.top = (getPageHeight() + 10) + 'px';
     elem.style.bottom = -(10 + modalHeight) + 'px';
 
+    registerEvents();
+
+    getLocation();
+}
+
+function registerEvents(){
     // modal-links
+    registerModals();
+
+    // page-links
+    registerPages();
+}
+
+function registerModals(){
     var linkElements = document.getElementsByClassName('modallink');
+    
     for(let el of linkElements){
-        el.addEventListener("click", function(event) {
+        /*var func = function(event){
             event.preventDefault();
             //document.getElementById('map').innerHTML = 'modal link ' + el.dataset.eventid; 
             loadModal(el.dataset.eventid);
             openModal(el);
-        });
+            return false;
+        };
+        el.removeEventListener("click", func);*/
+        el.addEventListener("click", function(event){
+            event.preventDefault();
+            //document.getElementById('map').innerHTML = 'modal link ' + el.dataset.eventid; 
+            loadModal(el.dataset.eventid);
+            openModal(el);
+            return false;
+        }, true);
     }
+}
 
-    // page-links
-    linkElements = document.getElementsByClassName('pagelink');
+function registerPages(){
+    var linkElements = document.getElementsByClassName('pagelink');
+
     for(let el of linkElements){
+        /*var func = function(event){
+            event.preventDefault();
+            //document.getElementById('map').innerHTML = 'page link '+el.dataset.pageid;
+            loadPage(el.dataset.pageid);
+            return false;
+        };
+        el.removeEventListener("click", func);*/
         el.addEventListener("click", function(event){
             event.preventDefault();
             //document.getElementById('map').innerHTML = 'page link '+el.dataset.pageid;
             loadPage(el.dataset.pageid);
-        });
+            return false;
+        }, true);
     }
-
-    getLocation();
 }
 
 function getPageWidth(){
@@ -279,6 +310,7 @@ function loadPage(id){
                 if(navVisible){
                     changeRotation(document.getElementById('menuIconImage'));
                 }
+                registerModals();
             }
         }
     };
