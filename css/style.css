@@ -230,8 +230,8 @@ main#modal {
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     opacity: 0.3;
 }
 
@@ -241,9 +241,9 @@ main#modal {
 
 #modal .close:before, #modal .close:after {
     position: absolute;
-    left: 14px;
+    left: 9px;
     content: ' '; /* anzuzeigender content */
-    height: 31px; /* element höhe */
+    height: 21px; /* element höhe */
     width: 2px; /* strichdicke */
 }
 
