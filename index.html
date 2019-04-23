@@ -27,7 +27,7 @@
         </div>
         <div class="toplowerbar">
             <div class="headerSpacer">&nbsp;</div>
-            <div class="centerHeaderDiv">Near your location
+            <div class="centerHeaderDiv" id="centerHeaderDiv">Near your location
                 <img src="images/loc.png" style="height: 35px;" />
             </div>
             <div class="filterIcon"><img src="images/filterOff.png" height="35px"
@@ -42,7 +42,7 @@
                 <li><a href="#link_3.html"><button>Planned to attend</button></a></li>
                 <li><a href="add.html"><button>Add new event</button></a></li>
                 <li><a href="notificationTest.html"><button>Notification Testpage</button></a></li>
-                <li><a href="about.html"><button>About</button></a></li>
+                <li><a href="#" class="pagelink" data-pageId="about"><button>About</button></a></li>
             </ul>
         </div>
         <div class="navbottom">
@@ -60,7 +60,7 @@
         <input id="locationName"class="locationName"  type="text" oninput="getCoordinates(this.value)">
         <div id="result" class="result"></div>
     </div>  
-    <main>
+    <main id="maincontent">
         <div class="map eventTile" id="map">Location </div>
         <article class="eventTile">
             <div class="modallink" data-eventId="eventDetail1">

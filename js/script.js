@@ -93,9 +93,25 @@ function initPageLayout(){
     for(let el of linkElements){
         el.addEventListener("click", function(event) {
             event.preventDefault();
-            document.getElementById('map').innerHTML = 'clicked ' + el.dataset.eventid; 
+            document.getElementById('map').innerHTML = 'modal link ' + el.dataset.eventid; 
             loadModal(el.dataset.eventid);
             openModal(el);
+        });
+    }
+
+    // page-links
+    linkElements = document.getElementsByClassName('pagelink');
+    for(let el of linkElements){
+        el.addEventListener("click", function(event){
+            event.preventDefault();
+            document.getElementById('map').innerHTML = 'page link '+el.dataset.pageid;
+            loadPage(el.dataset.pageid);
+            if(modalOpen){
+                closeModal(document.getElementsByClassName('close')[0]);
+            }
+            if(navVisible){
+                changeRotation(document.getElementById('menuIconImage'));
+            }
         });
     }
 
@@ -171,6 +187,7 @@ window.addEventListener('resize', function(){
     }
 });
 
+var modalOpen = false;
 function closeModal(elem){
     var modal       = elem.parentElement.parentElement,
         stop        = getPageHeight()-10,
@@ -191,6 +208,7 @@ function closeModal(elem){
             modal.style.display = 'none';
             clearInterval(intervalId);
             intervalId = null;
+            modalOpen = false;
         } else {
             if(pos + step >= stop){
                 pos  = stop;
@@ -224,6 +242,7 @@ function openModal(){
             clearInterval(intervalId);
             intervalId = null;
             modal.style.bottom = '40px';
+            modalOpen = true;
         } else {
             if(pos + step <= stop){
                 pos  = stop;
@@ -242,7 +261,24 @@ function loadModal(id){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
-            document.getElementById('modalcontentpane').innerHTML = json.contents;
+            if(json.type === 'modal'){
+                document.getElementById('modalcontentpane').innerHTML = json.contents;
+            }
+        }
+    };
+    xhttp.open("GET", id+".json", true);
+    xhttp.send();
+}
+
+function loadPage(id){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var json = JSON.parse(this.responseText);
+            if(json.type === 'page'){
+                document.getElementById('centerHeaderDiv').innerHTML = json.contents.header;
+                document.getElementById('maincontent').innerHTML = json.contents.page;
+            }
         }
     };
     xhttp.open("GET", id+".json", true);
