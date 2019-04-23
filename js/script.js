@@ -288,6 +288,7 @@ function loadModal(id){
         }
     };
     xhttp.open("GET", "jsons/"+id+".json", true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.send();
 }
 
@@ -311,6 +312,7 @@ function loadPage(id){
         }
     };
     xhttp.open("GET", "jsons/"+id+".json", true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.send();
 }
 
