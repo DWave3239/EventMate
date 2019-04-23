@@ -105,21 +105,14 @@ function registerModals(){
     var linkElements = document.getElementsByClassName('modallink');
     
     for(let el of linkElements){
-        /*var func = function(event){
+        let clone = el.cloneNode(true);
+        clone.addEventListener("click", function(event){
             event.preventDefault();
-            //document.getElementById('map').innerHTML = 'modal link ' + el.dataset.eventid; 
-            loadModal(el.dataset.eventid);
-            openModal(el);
-            return false;
-        };
-        el.removeEventListener("click", func);*/
-        el.addEventListener("click", function(event){
-            event.preventDefault();
-            //document.getElementById('map').innerHTML = 'modal link ' + el.dataset.eventid; 
-            loadModal(el.dataset.eventid);
-            openModal(el);
+            loadModal(clone.dataset.eventid);
+            openModal(clone);
             return false;
         }, true);
+        el.parentNode.replaceChild(clone, el);
     }
 }
 
@@ -127,19 +120,13 @@ function registerPages(){
     var linkElements = document.getElementsByClassName('pagelink');
 
     for(let el of linkElements){
-        /*var func = function(event){
+        let clone = el.cloneNode(true);
+        clone.addEventListener("click", function(event){
             event.preventDefault();
-            //document.getElementById('map').innerHTML = 'page link '+el.dataset.pageid;
-            loadPage(el.dataset.pageid);
-            return false;
-        };
-        el.removeEventListener("click", func);*/
-        el.addEventListener("click", function(event){
-            event.preventDefault();
-            //document.getElementById('map').innerHTML = 'page link '+el.dataset.pageid;
-            loadPage(el.dataset.pageid);
+            loadPage(clone.dataset.pageid);
             return false;
         }, true);
+        el.parentNode.replaceChild(clone, el);
     }
 }
 
@@ -288,6 +275,7 @@ function loadModal(id){
             var json = JSON.parse(this.responseText);
             if(json.type === 'modal'){
                 document.getElementById('modalcontentpane').innerHTML = json.contents;
+                registerEvents();
             }
         }
     };
@@ -310,7 +298,7 @@ function loadPage(id){
                 if(navVisible){
                     changeRotation(document.getElementById('menuIconImage'));
                 }
-                registerModals();
+                registerEvents();
             }
         }
     };
