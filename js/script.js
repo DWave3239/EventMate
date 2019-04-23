@@ -106,12 +106,6 @@ function initPageLayout(){
             event.preventDefault();
             document.getElementById('map').innerHTML = 'page link '+el.dataset.pageid;
             loadPage(el.dataset.pageid);
-            if(modalOpen){
-                closeModal(document.getElementsByClassName('close')[0]);
-            }
-            if(navVisible){
-                changeRotation(document.getElementById('menuIconImage'));
-            }
         });
     }
 
@@ -278,6 +272,13 @@ function loadPage(id){
             if(json.type === 'page'){
                 document.getElementById('centerHeaderDiv').innerHTML = json.contents.header;
                 document.getElementById('maincontent').innerHTML = json.contents.page;
+
+                if(modalOpen){
+                    closeModal(document.getElementsByClassName('close')[0]);
+                }
+                if(navVisible){
+                    changeRotation(document.getElementById('menuIconImage'));
+                }
             }
         }
     };
