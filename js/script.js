@@ -93,7 +93,7 @@ function initPageLayout(){
     for(let el of linkElements){
         el.addEventListener("click", function(event) {
             event.preventDefault();
-            document.getElementById('map').innerHTML = 'modal link ' + el.dataset.eventid; 
+            //document.getElementById('map').innerHTML = 'modal link ' + el.dataset.eventid; 
             loadModal(el.dataset.eventid);
             openModal(el);
         });
@@ -104,7 +104,7 @@ function initPageLayout(){
     for(let el of linkElements){
         el.addEventListener("click", function(event){
             event.preventDefault();
-            document.getElementById('map').innerHTML = 'page link '+el.dataset.pageid;
+            //document.getElementById('map').innerHTML = 'page link '+el.dataset.pageid;
             loadPage(el.dataset.pageid);
         });
     }
@@ -260,7 +260,7 @@ function loadModal(id){
             }
         }
     };
-    xhttp.open("GET", id+".json", true);
+    xhttp.open("GET", "jsons/"+id+".json", true);
     xhttp.send();
 }
 
@@ -282,7 +282,7 @@ function loadPage(id){
             }
         }
     };
-    xhttp.open("GET", id+".json", true);
+    xhttp.open("GET", "jsons/"+id+".json", true);
     xhttp.send();
 }
 
