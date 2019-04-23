@@ -15,6 +15,12 @@ main{
     background-color: #202020;
 }
 
+#addButton {
+    border: 1px solid white;
+    /*background: url('../images/add_dark.png') no-repeat center;*/
+    background: url('../images/add_alternative_dark.png') no-repeat center;
+}
+
 /* HEADER */
 .brandDiv {
     background: url(../images/header_dark.png) no-repeat center center;

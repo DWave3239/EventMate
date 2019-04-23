@@ -203,7 +203,7 @@ window.addEventListener('resize', function(){
     }
     if(document.getElementById('addButton')){
         var btn = document.getElementById('addButton');
-        btn.style.left = (docuemnt.getElementsByTagName('body')[0].getBoundingClientRect().right - 70) + 'px';
+        btn.style.left = (document.getElementsByTagName('body')[0].getBoundingClientRect().right - 70) + 'px';
     }
 });
 

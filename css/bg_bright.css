@@ -11,6 +11,12 @@ main{
     background-color: #f1f3f4;
 }
 
+#addButton {
+    border: 1px solid black;
+    /*background: url('../images/add_bright.png') no-repeat center;*/
+    background: url('../images/add_alternative_bright.png') no-repeat center;
+}
+
 /* HEADER */
 .brandDiv {
     background: url(../images/header_bright.png) no-repeat center center;
