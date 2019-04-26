@@ -76,12 +76,14 @@ article, section, aside {
 .brandIcon, .filterIcon {
     height: 35px;
     padding: 5px;
+    cursor: pointer;
 }
 
 #menuIconImage {
     width: 35px;
     height: 35px;
     margin: 5px;
+    cursor: pointer;
 }
 
 .headerSpacer {
@@ -105,7 +107,7 @@ article, section, aside {
 
 .centerHeaderDiv {
     height: 40px;
-    margin-top: 5px;
+    padding-top: 5px;
     text-align: center;
 }
 
