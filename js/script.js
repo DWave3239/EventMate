@@ -163,10 +163,6 @@ function loadPage(id){
     xhttp.send();
 }
 
-<<<<<<< HEAD
-function keyCloseModal (e) {
-    if(e.keyCode === "Escape") {
-=======
 function changeFilterIcon(elem){
     var icon = document.getElementById('filterIcon');
     if(elem.checked){
@@ -184,9 +180,8 @@ function toggleFilter(){
     }
 }
 
-function keyDown (e) {
+function keyCloseModal (e) {
     if(e.key === "Escape") {
->>>>>>> 669b3bb999c33247db070bfab1f1f4319ea1b1bd
         if(modalOpen){
             closeModal(document.getElementsByClassName('close')[0]);
         }
