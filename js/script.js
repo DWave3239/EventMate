@@ -320,7 +320,7 @@ function loadPage(id){
     xhttp.send();
 }
 
-function keyPress (e) {
+function keyDown (e) {
     if(e.key === "Escape") {
         if(modalOpen){
             closeModal(document.getElementsByClassName('close')[0]);
