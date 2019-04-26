@@ -65,12 +65,28 @@ function setLocation(newLat, newLon) {
     lon = newLon;
 }
 
-function getCoordinates(query) {
+var timestamp, oldTimestamp;
+var interval;
+var globalQuery;
+
+function setLocationInterval() {
+  timestamp = 0;
+  oldTimestamp = 0;
+  interval = setInterval(autocomplete, 150);
+}
+
+function clearLocationInterval() {
+  clearInterval(interval);
+}
+
+function autocomplete() {
+    if(timestamp == oldTimestamp || Date.now() - timestamp < 300) return;
+    oldTimestamp = timestamp;
     var list = document.getElementById("result");
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://api.locationiq.com/v1/autocomplete.php?key="+apiKey+"&q="+query+"&limit=5&normalizecity=1&accept-language=de",
+        "url": "https://api.locationiq.com/v1/autocomplete.php?key="+apiKey+"&q="+globalQuery+"&limit=5&normalizecity=1&accept-language=de",
         "method": "GET"
       }
       
@@ -82,6 +98,11 @@ function getCoordinates(query) {
             options += '<div class="resultEntry" onclick="clickLocation(this)" id="'+i+'">'+response[i].display_name+'</div>';
         list.innerHTML = options;
       });      
+}
+
+function updateQuery(query) {
+  globalQuery = query;
+  timestamp = Date.now();
 }
 
 function clickLocation(item) { //TODO

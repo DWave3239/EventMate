@@ -57,7 +57,7 @@
     </nav>
     <nav id="sidenavunderlay">&nbsp;</nav>
     <div class="searchbar">                
-        <input id="locationName"class="locationName"  type="text" oninput="getCoordinates(this.value)">
+        <input id="locationName"class="locationName"  type="text" oninput="updateQuery(this.value)" onblur="clearLocationInterval()" onfocus="setLocationInterval()">
         <div id="result" class="result"></div>
     </div>  
     <main id="maincontent">
