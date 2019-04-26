@@ -13,7 +13,7 @@ function filterEvents(filters, events) {
     return oldArray;
 }
 
-function DistaceFilter(maxDistance) {
+function DistanceFilter(maxDistance) {
     this.maxDistance = maxDistance;
     this.applyFilter = function (event) {
         var distance = distanceInKmBetweenEarthCoordinates(event.lat, event.lon);
@@ -44,6 +44,6 @@ function DateFilter(from, to) {
 
 function testFilter() { //TODO test date filter
     var events = [{lon: 0, lat: 0.001, eventType: "a"}, {lon:100, lat:10, eventType: "b"}];
-    var filters = [new TypeFilter(["a", "c"]), new DistaceFilter(1120)];
+    var filters = [new TypeFilter(["a", "c"]), new DistanceFilter(1120)];
     console.log(filterEvents(filters, events));
 }
