@@ -94,7 +94,11 @@ function initPageLayout(){
 
     registerEvents();
 
+    //Locations
     getLocation();
+    //Filtertests
+    testFilter();
+
 }
 
 function registerEvents(){
