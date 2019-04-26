@@ -24,11 +24,12 @@ function DistaceFilter(maxDistance) {
 function TypeFilter(types) {
     this.types = types;
     this.applyFilter = function (event) {
+        var result = false;
         types.forEach(element => {
-            if(element.localeCompare(event.type))
-                return true;
+            if(element.localeCompare(event.eventType))
+                result =  true;
         });
-        return false;
+        return result;
     };
 }
 
@@ -37,12 +38,12 @@ function DateFilter(from, to) {
     this.to = to;
     this.applyFilter = function (event) {
         if(event.date > from && event.date < to)
-        return false;
+            return false;
     };
 }
 
-function testFilter() {
-    var events = [{lon: 0, lat: 0.001}, {lon:100, lat:10}];
-    var filters = [new DistaceFilter(0.12), new DistaceFilter(1120)];
+function testFilter() { //TODO test date filter
+    var events = [{lon: 0, lat: 0.001, eventType: "a"}, {lon:100, lat:10, eventType: "b"}];
+    var filters = [new TypeFilter(["a", "c"]), new DistaceFilter(1120)];
     console.log(filterEvents(filters, events));
 }
