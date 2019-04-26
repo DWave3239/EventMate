@@ -180,7 +180,15 @@ function toggleFilter(){
     }
 }
 
-/*$(function(){
+function keyDown (e) {
+    if(e.key === "Escape") {
+        if(modalOpen){
+            closeModal(document.getElementsByClassName('close')[0]);
+        }
+    }
+}
+
+$(function(){
     $('*[data-href]').click(function(){
         window.open($(this).data('href'));
         return false;
