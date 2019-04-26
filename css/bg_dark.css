@@ -58,6 +58,11 @@ main{
     background-color: #ccc;
 }
 
+/* FILTER */
+#filtercontent {
+    background-color: #202020;
+}
+
 /* TILES */
 .eventTile {
     border: 2px solid #111111;

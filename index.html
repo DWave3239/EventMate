@@ -12,6 +12,7 @@
     <!-- Order of libraries is important! -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/move.js"></script>
     <script src="js/toast.js"></script>
     <script src="js/geolocation.js"></script>    
     <script src="js/filter.js"></script>
@@ -21,8 +22,7 @@
 <body onload="initPageLayout()" onkeydown="keyCloseModal(event)">
     <header>
         <div class="topbar">
-            <div class="menuIcon"><img src="images/menu_bright.png" id="menuIconImage" class="rotate-0"
-                    onclick="changeRotation(this)" /></div>
+            <div class="menuIcon"><img src="images/menu_bright.png" id="menuIconImage" class="rotate-0" onclick="changeSideNavIconRotation()" /></div>
             <div class="brandDiv"></div>
             <div class="headerSpacer">&nbsp;</div>
         </div>
@@ -31,8 +31,7 @@
             <div class="centerHeaderDiv" id="centerHeaderDiv">Near your location
                 <img src="images/loc.png" style="height: 35px;" />
             </div>
-            <div class="filterIcon"><img src="images/filterOff.png" height="35px"
-                    onmouseover="this.src='images/filterOn.png'" onmouseout="this.src='images/filterOff.png'" /></div>
+            <div class="filterIcon"><img src="images/filterOff.png" height="35px" id="filterIcon" onclick="toggleFilter()"/></div>
         </div>
     </header>
     <nav id="sidenav">
@@ -57,7 +56,7 @@
         </div>
     </nav>
     <nav id="sidenavunderlay">&nbsp;</nav>
-    <div class="searchbar">                
+    <div class="searchbar">
         <input id="locationName"class="locationName"  type="text" oninput="updateQuery(this.value)" onblur="clearLocationInterval()" onfocus="setLocationInterval()">
         <div id="result" class="result"></div>
     </div>  
@@ -179,6 +178,55 @@
                 </div>
             </div>
         </article>
+    </main>
+    <main id="filter">
+        <div id="filterunderlay"></div>
+        <div id="filtercontent">
+            <form id="filterform">
+                <table>
+                    <tr>
+                        <td><label for="filterOn">Enable Filter&nbsp;</label></td>
+                        <td colspan="2">
+                            <label class="switch">
+                                <input type="checkbox" id="filterOn" onchange="changeFilterIcon(this);">
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Distance:</td>
+                        <td><div class="rangeslidercontainer"><input type="range" min="1" max="100" value="100" class="rangeslider" id="rangeFilter"></div></td> <!-- make slider -->
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Type:</td>
+                        <td colspan="2">
+                            <select multiple>
+                                <option value="1">Type 1</option>
+                                <option value="2">Type 2</option>
+                                <option value="3">Type 3</option>
+                                <option value="whatever">others..</option>
+                            </select> 
+                        </td> <!-- make list with multiple checkables -->
+                    </tr>
+                    <tr>
+                        <td>Date:</td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <td>From:</td>
+                                    <td><input type="date" value="1970-01-01"><input type="time" value="00:00"></td> <!-- make date picker -->
+                                </tr>
+                                <tr>
+                                    <td>To:</td>
+                                    <td><input type="date" value="2199-12-31"><input type="time" value="23:59"></td> <!-- make date picker -->
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </main>
     <main id="modal">
         <div id="modalunderlay"></div>

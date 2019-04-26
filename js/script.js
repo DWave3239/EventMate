@@ -1,4 +1,5 @@
-function changeRotation(element){
+function changeSideNavIconRotation(){
+    var element = document.getElementById('menuIconImage');
     if(element.classList.contains('rotate-90')){ // rotate back -> close nav
         element.classList.remove('rotate-90');
         element.classList.add('rotate-0');
@@ -10,92 +11,16 @@ function changeRotation(element){
     }
 }
 
-var intervalId = null;
-var navVisible = false; // not visible
-
-function moveNav(direction) {
-    var elem    = document.getElementById('sidenav'),
-        header  = document.getElementsByTagName('header')[0],
-        underlay= document.getElementById('sidenavunderlay'),
-        stop    = header.getBoundingClientRect().left, 
-        step    = getPageWidth()/50,
-        pos     = elem.getBoundingClientRect().left;
-
-    if(intervalId){
-        clearInterval(intervalId);
-        intervalId = null;
-    }
-
-    if(direction === 'in'){
-        stop        = -elem.offsetWidth;
-        step        = -step;
-        intervalId  = setInterval(frameOut, 1);
-        underlay.style.display = 'none';
-    }else{
-        if(pos < -elem.offsetWidth)
-            pos = -elem.offsetWidth;
-        intervalId  = setInterval(frameIn, 1);
-        underlay.style.display = 'block';
-    }
-
-    function frameIn() {
-        if (pos >= stop) {
-              clearInterval(intervalId);
-              intervalId = null;
-              navVisible = true;
-        } else {
-            if(pos + step >= stop){
-                pos = stop;
-            }else{
-                pos += step;
-            }
-            elem.style.left = pos + 'px';
-        }
-    }
-
-    function frameOut(){
-        if (pos <= stop) {
-            clearInterval(intervalId);
-            intervalId = null;
-            navVisible = false;
-        } else {
-            if(pos + step <= stop){
-                pos = stop;
-            }else{
-                pos += step;
-            }
-            elem.style.left = pos + 'px';
-        }
-    }
-}
-
-var modalHeight;
+var modalHeight, filterHeight, modalOpen = false, filterOpen = false;
 
 function initPageLayout(){
-    // sidenav
-    var elem = document.getElementById('sidenav');
-    elem.style.left = -elem.offsetWidth + 'px';
-
-    document.getElementById('sidenavunderlay').addEventListener("click", function(event) {
-        changeRotation(document.getElementById('menuIconImage'));
-    });
-
-    // modal
-    elem = document.getElementById('modal');
-    elem.style.display = 'block';
-    modalHeight = elem.getBoundingClientRect().bottom - elem.getBoundingClientRect().top;
-    elem.style.display = 'none';
-    elem.style.top = (getPageHeight() + 10) + 'px';
-    elem.style.bottom = -(10 + modalHeight) + 'px';
-
-    // add button
-    elem = document.getElementById('addButton');
-    elem.style.left = (document.getElementsByTagName('body')[0].getBoundingClientRect().right - 70) + 'px';
+    initialMoves();
 
     registerEvents();
 
     //Locations
     getLocation();
+
     //Filtertests
     testFilter();
 
@@ -198,88 +123,6 @@ function changeTheme(){
     menuIconImage.src = menuIconImage.src.replace(iconFilename, newIconFilename);
 }
 
-window.addEventListener('resize', function(){
-    if(navVisible){
-        var elem    = document.getElementById('sidenav'),
-            header  = document.getElementsByTagName('header')[0];
-
-        elem.style.left = header.getBoundingClientRect().left+'px';
-    }
-    if(document.getElementById('addButton')){
-        var btn = document.getElementById('addButton');
-        btn.style.left = (document.getElementsByTagName('body')[0].getBoundingClientRect().right - 70) + 'px';
-    }
-});
-
-var modalOpen = false;
-function closeModal(elem){
-    var modal       = elem.parentElement.parentElement,
-        stop        = getPageHeight()-10,
-        pos         = modal.getBoundingClientRect().top,
-        pos2        = getPageHeight() - modal.getBoundingClientRect().bottom,
-        step        = getPageHeight()/10,
-        intervalId  = null;
-    
-    modal.style.top     = pos  + 'px';
-    modal.style.bottom  = pos2 + 'px';
-
-    intervalId = setInterval(move, 1);
-    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-
-    function move(){
-        if (pos >= stop) {
-            document.getElementsByTagName('body')[0].style.overflow = 'auto';
-            modal.style.display = 'none';
-            clearInterval(intervalId);
-            intervalId = null;
-            modalOpen = false;
-        } else {
-            if(pos + step >= stop){
-                pos  = stop;
-            }else{
-                pos  += step;
-                pos2 -= step;
-            }
-            modal.style.top    = pos  + 'px';
-            modal.style.bottom = pos2  + 'px';
-        }
-    }
-}
-
-function openModal(){
-    var modal       = document.getElementById('modal');
-        modal.style.display = 'block';
-    var stop        = 45,
-        pos         = modal.getBoundingClientRect().top,
-        pos2        = getPageHeight() - modal.getBoundingClientRect().bottom,
-        step        = -getPageHeight()/10,
-        intervalId  = null;
-
-    modal.style.display = 'block';
-
-    intervalId = setInterval(move, 1);
-    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-
-    function move(){
-        if (pos <= stop) {
-            document.getElementsByTagName('body')[0].style.overflow = 'auto';
-            clearInterval(intervalId);
-            intervalId = null;
-            modal.style.bottom = '40px';
-            modalOpen = true;
-        } else {
-            if(pos + step <= stop){
-                pos  = stop;
-            }else{
-                pos  += step;
-                pos2 -= step;
-            }
-            modal.style.top    = pos  + 'px';
-            modal.style.bottom = pos2  + 'px';
-        }
-    }
-}
-
 function loadModal(id){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -306,10 +149,10 @@ function loadPage(id){
                 document.getElementById('maincontent').innerHTML = json.contents.page;
 
                 if(modalOpen){
-                    closeModal(document.getElementsByClassName('close')[0]);
+                    closeModal();
                 }
                 if(navVisible){
-                    changeRotation(document.getElementById('menuIconImage'));
+                    changeSideNavIconRotation();
                 }
                 registerEvents();
             }
@@ -320,8 +163,30 @@ function loadPage(id){
     xhttp.send();
 }
 
+<<<<<<< HEAD
 function keyCloseModal (e) {
     if(e.keyCode === "Escape") {
+=======
+function changeFilterIcon(elem){
+    var icon = document.getElementById('filterIcon');
+    if(elem.checked){
+        icon.src = 'images/filterOn.png';
+    }else{
+        icon.src = 'images/filterOff.png';
+    }
+}
+
+function toggleFilter(){
+    if(filterOpen){
+        closeFilter();
+    }else{
+        openFilter();
+    }
+}
+
+function keyDown (e) {
+    if(e.key === "Escape") {
+>>>>>>> 669b3bb999c33247db070bfab1f1f4319ea1b1bd
         if(modalOpen){
             closeModal(document.getElementsByClassName('close')[0]);
         }
