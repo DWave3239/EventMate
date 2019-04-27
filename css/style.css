@@ -168,7 +168,7 @@ article, section, aside {
     opacity: 0.5;
     max-width: 70em;
     width: 100%;
-    height: calc(100% - 45px);
+    height: calc(100% - 85px);
     top: 45px;
     display: none;
     position: absolute;
