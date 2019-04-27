@@ -24,6 +24,9 @@ function initPageLayout(){
     //Filtertests
     testFilter();
 
+    //Ordertests
+    testOrder();
+
 }
 
 function registerEvents(){
