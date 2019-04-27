@@ -24,6 +24,9 @@ function initPageLayout(){
     //Filtertests
     testFilter();
 
+    //Ordertests
+    testOrder();
+
 }
 
 function registerEvents(){
@@ -180,7 +183,7 @@ function toggleFilter(){
     }
 }
 
-function keyDown (e) {
+function keyCloseModal (e) {
     if(e.key === "Escape") {
         if(modalOpen){
             closeModal(document.getElementsByClassName('close')[0]);
