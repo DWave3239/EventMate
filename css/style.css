@@ -377,7 +377,11 @@ main#filter {
 #filtercontent td {
     vertical-align: top;
     padding: 10px 20px 0px 20px;
-} 
+}
+
+#filtercontent table table td {
+    padding: 0;
+}
 
 /* TILES */
 
