@@ -220,6 +220,16 @@ function openFilter(){
     }
 }
 
+function showLoader(){
+    var elem = document.getElementById('loader');
+    elem.style.top = '0px';
+}
+
+function hideLoader(){
+    var elem = document.getElementById('loader');
+    elem.style.top = '-9999px';
+}
+
 window.addEventListener('resize', function(){
     if(navVisible){
         var elem    = document.getElementById('sidenav'),

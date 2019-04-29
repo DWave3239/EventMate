@@ -45,7 +45,6 @@ function registerModals(){
         clone.addEventListener("click", function(event){
             event.preventDefault();
             loadModal(clone.dataset.eventid);
-            openModal(clone);
             return false;
         }, true);
         el.parentNode.replaceChild(clone, el);
@@ -127,6 +126,7 @@ function changeTheme(){
 }
 
 function loadModal(id){
+    showLoader();
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -134,6 +134,9 @@ function loadModal(id){
             if(json.type === 'modal'){
                 document.getElementById('modalcontentpane').innerHTML = json.contents;
                 registerEvents();
+                hideLoader();
+                openModal();
+                console.log('done');
             }
         }
     };
@@ -143,6 +146,7 @@ function loadModal(id){
 }
 
 function loadPage(id){
+    showLoader();
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -158,6 +162,7 @@ function loadPage(id){
                     changeSideNavIconRotation();
                 }
                 registerEvents();
+                hideLoader();
             }
         }
     };

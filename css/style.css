@@ -64,6 +64,22 @@ article, section, aside {
     background-size: cover;
 }
 
+#loader {
+    top: -100000px;
+    position: absolute;
+    max-width: 70em;
+    width: 100%;
+    height: 100%;
+    background: #00000088;
+    z-index: 999;
+}
+
+#loader img {
+    padding-top: 33.3%;
+    padding-left: 33.3%;
+    height: 33.3%;
+}
+
 /* HEADER LAYOUT */
 
 .icon {
