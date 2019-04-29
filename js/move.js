@@ -4,7 +4,7 @@ function initialMoves(){
     elem.style.left = -elem.offsetWidth + 'px';
 
     document.getElementById('sidenavunderlay').addEventListener("click", function(event) {
-        changeRotation(document.getElementById('menuIconImage'));
+        changeSideNavIconRotation();
     });
 
     // modal
