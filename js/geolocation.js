@@ -7,7 +7,7 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
   } else {
-    iqwerty.toast.Toast("Geolocation is not supported by this browser.");
+    //iqwerty.toast.Toast("Geolocation is not supported by this browser.");
   }
 }
 
@@ -36,7 +36,7 @@ function showError(error) {
         message = "An unknown error occurred."
         break;
     }
-    iqwerty.toast.Toast(message);
+    //iqwerty.toast.Toast(message);
 } 
 
 function degreesToRadians(degrees) {
