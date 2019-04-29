@@ -104,13 +104,13 @@ function changeTheme(){
     filename = link.substr(link.lastIndexOf('/')+1);
     
     switch(filename){
-        case 'bg_bright.css':
-            newFilename = 'bg_dark.css';
+        case 'bg_bright.css?v=0.9':
+            newFilename = 'bg_dark.css?v=0.9';
             newIconFilename = 'menu_dark.png';
             iconFilename = 'menu_bright.png';
             break;
-        case 'bg_dark.css':
-            newFilename = 'bg_bright.css';
+        case 'bg_dark.css?v=0.9':
+            newFilename = 'bg_bright.css?v=0.9';
             newIconFilename = 'menu_bright.png';
             iconFilename = 'menu_dark.png';
             break;
