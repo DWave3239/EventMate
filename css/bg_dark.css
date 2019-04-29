@@ -17,7 +17,6 @@ main{
 
 #addButton {
     border: 1px solid white;
-    /*background: url('../images/add_dark.png') no-repeat center;*/
     background: url('../images/add_alternative_dark.png') no-repeat center;
 }
 

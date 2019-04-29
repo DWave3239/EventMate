@@ -70,8 +70,8 @@ article, section, aside {
     max-width: 70em;
     width: 100%;
     height: 100%;
-    /*background: #00000088;*/
     background: #00000088 url('../images/loading.gif') no-repeat center;
+    background-size: 20% auto;
     z-index: 999;
 }
 
@@ -353,9 +353,9 @@ main#filter {
   
 /* The slider itself */
 .rangeslider {
-    /*margin-left: 20px;
+    margin-left: 20px;
     margin-right: 20px;
-    border-radius: 6px;*/
+    border-radius: 9px; 
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 100%; /* Full-width */
@@ -378,7 +378,7 @@ main#filter {
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    /*border-radius: 50%; */
+    border-radius: 50%;
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
@@ -386,7 +386,7 @@ main#filter {
 .rangeslider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    /*border-radius: 50%;*/
+    border-radius: 50%;
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
@@ -417,11 +417,6 @@ main#filter {
 .upperTile {
     overflow: auto;
 }
-
-/* 
-.modallink {
-    font-weight: bold;
-} */
 
 .lowerTile {
     width: 100%;
