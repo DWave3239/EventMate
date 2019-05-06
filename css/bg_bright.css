@@ -40,6 +40,10 @@ main{
     color: black;
 }
 
+#loginButton {
+    border: 1px solid black;
+}
+
 /* MODAL */
 #modalcontent {
     background-color: #f1f3f4;
