@@ -9,21 +9,34 @@
     <link rel="stylesheet" href="css/bg_bright.css?v=0.9" data-id="css">
     <link rel="stylesheet" href="css/style.css?v=0.9">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139305280-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-139305280-1');
+    </script>
+
+
     <!-- Order of libraries is important! -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/script.js?v=1.0"></script>
     <script src="js/move.js?v=1.0"></script>
     <script src="js/toast.js?v=1.0"></script>
-    <script src="js/geolocation.js?v=0.9"></script>    
-    <script src="js/filter.js?v=0.9"></script>      
+    <script src="js/geolocation.js?v=0.9"></script>
+    <script src="js/filter.js?v=0.9"></script>
     <script src="js/order.js?v=0.9"></script>
 
     <title>EventMate - Find your Fun!</title>
 </head>
+
 <body onload="initPageLayout()" onkeydown="keyCloseModal(event)">
     <header>
         <div class="topbar">
-            <div class="menuIcon"><img src="images/menu_bright.png" id="menuIconImage" class="rotate-0" onclick="changeSideNavIconRotation()" /></div>
+            <div class="menuIcon"><img src="images/menu_bright.png" id="menuIconImage" class="rotate-0"
+                    onclick="changeSideNavIconRotation()" /></div>
             <div class="brandDiv"></div>
             <div class="headerSpacer">&nbsp;</div>
         </div>
@@ -32,7 +45,8 @@
             <div class="centerHeaderDiv" id="centerHeaderDiv">Near your location
                 <img src="images/loc.png" style="height: 35px;" />
             </div>
-            <div class="filterIcon"><img src="images/filterOff.png" height="35px" id="filterIcon" onclick="toggleFilter()"/></div>
+            <div class="filterIcon"><img src="images/filterOff.png" height="35px" id="filterIcon"
+                    onclick="toggleFilter()" /></div>
         </div>
     </header>
     <nav id="sidenav">
@@ -40,7 +54,8 @@
             <ul>
                 <li><a href="#" class="pagelink" data-pageId="index"><button>Near your location</button></a></li>
                 <li><a href="#" class="pagelink" data-pageId="yourEvents"><button>Your events</button></a></li>
-                <li><a href="#" class="pagelink" data-pageId="plannedToAttend"><button>Planned to attend</button></a></li>
+                <li><a href="#" class="pagelink" data-pageId="plannedToAttend"><button>Planned to attend</button></a>
+                </li>
                 <li><a href="add.html"><button>Add new event</button></a></li>
                 <li><a href="notificationTest.html"><button>Notification Testpage</button></a></li>
                 <li><a href="#" class="pagelink" data-pageId="about"><button>About</button></a></li>
@@ -71,9 +86,10 @@
     </nav>
     <nav id="sidenavunderlay">&nbsp;</nav>
     <div class="searchbar">
-        <input id="locationName"class="locationName"  type="text" oninput="updateQuery(this.value)" onblur="clearLocationInterval()" onfocus="setLocationInterval()">
+        <input id="locationName" class="locationName" type="text" oninput="updateQuery(this.value)"
+            onblur="clearLocationInterval()" onfocus="setLocationInterval()">
         <div id="result" class="result"></div>
-    </div>  
+    </div>
     <main id="maincontent">
         <div class="map eventTile" id="map">Location </div>
         <article class="eventTile">
@@ -209,7 +225,10 @@
                     </tr>
                     <tr>
                         <td>Distance:</td>
-                        <td><div class="rangeslidercontainer"><input type="range" min="1" max="100" value="100" class="rangeslider" id="rangeFilter"></div></td> <!-- make slider -->
+                        <td>
+                            <div class="rangeslidercontainer"><input type="range" min="1" max="100" value="100"
+                                    class="rangeslider" id="rangeFilter"></div>
+                        </td> <!-- make slider -->
                         <td></td>
                     </tr>
                     <tr>
@@ -220,7 +239,7 @@
                                 <option value="2">Type 2</option>
                                 <option value="3">Type 3</option>
                                 <option value="whatever">others..</option>
-                            </select> 
+                            </select>
                         </td> <!-- make list with multiple checkables -->
                     </tr>
                     <tr>
@@ -229,11 +248,13 @@
                             <table>
                                 <tr>
                                     <td>From:</td>
-                                    <td><input type="date" value="1970-01-01"><input type="time" value="00:00"></td> <!-- make date picker -->
+                                    <td><input type="date" value="1970-01-01"><input type="time" value="00:00"></td>
+                                    <!-- make date picker -->
                                 </tr>
                                 <tr>
                                     <td>To:</td>
-                                    <td><input type="date" value="2199-12-31"><input type="time" value="23:59"></td> <!-- make date picker -->
+                                    <td><input type="date" value="2199-12-31"><input type="time" value="23:59"></td>
+                                    <!-- make date picker -->
                                 </tr>
                             </table>
                         </td>
