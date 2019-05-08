@@ -179,6 +179,7 @@ article, section, aside {
     height: calc(100% - 105px);
     padding: 10px;
     left: -100000px;
+    overflow: hidden;
 }
 
 #sidenavunderlay {
@@ -213,7 +214,8 @@ article, section, aside {
 .navbottom {
     position: absolute;
     bottom: 0px;
-    margin: 10px 0;
+    padding: 10px 0;
+    width: 90%;
 }
 
 #login {

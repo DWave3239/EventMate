@@ -44,6 +44,10 @@ main{
     color: #d0d0d0;
 }
 
+.navbottom {
+    background: #2f2d2c;
+}
+
 #loginButton {
     border: 1px solid white;
 }

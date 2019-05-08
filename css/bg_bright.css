@@ -40,6 +40,10 @@ main{
     color: black;
 }
 
+.navbottom {
+    background: #d0d2d3;
+}
+
 #loginButton {
     border: 1px solid black;
 }
