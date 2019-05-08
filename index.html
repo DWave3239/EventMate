@@ -51,19 +51,7 @@
     </header>
     <nav id="sidenav">
         <div style="overflow: auto;">
-            <ul>
-                <li><a href="#" class="pagelink" data-pageId="index"><button>Near your location</button></a></li>
-                <li><a href="#" class="pagelink" data-pageId="yourEvents"><button>Your events</button></a></li>
-                <li><a href="#" class="pagelink" data-pageId="plannedToAttend"><button>Planned to attend</button></a>
-                </li>
-                <li><a href="add.html"><button>Add new event</button></a></li>
-                <li><a href="notificationTest.html"><button>Notification Testpage</button></a></li>
-                <li><a href="#" class="pagelink" data-pageId="about"><button>About</button></a></li>
-            </ul>
-        </div>
-        <div class="navbottom">
-            <hr />
-            <table>
+            <table id="login">
                 <tr>
                     <td><input type="text" placeholder="Username"></td>
                 </tr>
@@ -75,13 +63,25 @@
                 </tr>
             </table>
             <hr />
-            Settings
-            <hr />
-            <label class="switch">
-                <input type="checkbox" id="darkmode" onclick="changeTheme();">
-                <span class="slider round"></span>
-            </label>
-            <label for="darkmode">Darkmode</label>
+            <ul>
+                <li><a href="#" class="pagelink" data-pageId="index"><button>Near your location</button></a></li>
+                <li><a href="#" class="pagelink" data-pageId="yourEvents"><button>Your events</button></a></li>
+                <li><a href="#" class="pagelink" data-pageId="plannedToAttend"><button>Planned to attend</button></a>
+                </li>
+                <li><a href="add.html"><button>Add new event</button></a></li>
+                <li><a href="notificationTest.html"><button>Notification Testpage</button></a></li>
+                <li><a href="#" class="pagelink" data-pageId="about"><button>About</button></a></li>
+            </ul>
+            <div class="navbottom">
+                <hr />
+                Settings
+                <hr />
+                <label class="switch">
+                    <input type="checkbox" id="darkmode" onclick="changeTheme();">
+                    <span class="slider round"></span>
+                </label>
+                <label for="darkmode">Darkmode</label>
+            </div>
         </div>
     </nav>
     <nav id="sidenavunderlay">&nbsp;</nav>

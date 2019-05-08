@@ -216,6 +216,14 @@ article, section, aside {
     margin: 10px 0;
 }
 
+#login {
+    width: 100%;
+}
+
+#login input[type=text], #login input[type=password] {
+    width: 97%;
+}
+
 #loginButton {
     width: 100%;
     border-radius: 5px;
