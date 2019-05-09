@@ -199,7 +199,7 @@ article, section, aside {
 }
 
 .navtop {
-    height:88%;
+    height: 87%;
 }
 
 .navtop>ul {
@@ -222,7 +222,7 @@ article, section, aside {
 
 .navbottom {
     padding: 0 10px;
-    height:10%;
+    height: 10%;
 }
 
 #login {
