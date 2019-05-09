@@ -9,13 +9,13 @@ function getTouches(evt) {
          evt.originalEvent.touches; // jQuery
 }                           
 
-/*function handleTouchStart(evt) {
+function handleTouchStart(evt) {
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;
     
-    document.getElementById('footer').innerHTML = "<p>Detected touch!</p>";
-};*/                                     
+    // document.getElementById('footer').innerHTML = "<p>Detected touch!</p>";
+};
 
 function handleTouchMove(evt) {
     if(!xDown || !yDown){
