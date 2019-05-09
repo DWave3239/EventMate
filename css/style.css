@@ -195,7 +195,7 @@ article, section, aside {
 
 #sidenav>div{
     overflow: auto;
-    height: calc(100%-20px);
+    height: calc(100% - 20px);
 }
 
 .navtop {
