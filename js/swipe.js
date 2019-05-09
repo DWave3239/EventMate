@@ -18,7 +18,7 @@ function handleTouchStart(evt) {
 };                                                
 
 function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
+    if(!xDown || !yDown){
         return;
     }
 
@@ -30,21 +30,44 @@ function handleTouchMove(evt) {
 
     var direction;
 
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
+    if(Math.abs(xDiff) > Math.abs(yDiff)){/*most significant*/
+        if(xDiff > 0){
             /* left swipe */ 
             direction = "left";
-        } else {
+            
+            // if navigation is open -> close it
+            if(navOpen){
+                changeSideNavIconRotation();
+            }
+        }else{
             /* right swipe */
             direction = "right";
+
+            // if navigation is not open -> open it
+            if(!navOpen){
+                changeSideNavIconRotation();
+            }
         }                       
-    } else {
-        if ( yDiff > 0 ) {
+    }else{
+        if(yDiff > 0){
             /* up swipe */ 
             direction = "up";
-        } else { 
+            // if filter is open -> close it
+            if(filterOpen){
+                openFilter();
+            }
+        }else{ 
             /* down swipe */
             direction = "down";
+            /*
+            // if modal is open -> close it
+            if(modalOpen){
+                closeModal();
+            }else{
+                if(!filterOpen){
+                    openFilter();
+                }
+            }*/
         }                                                                 
     }
     /* reset values */

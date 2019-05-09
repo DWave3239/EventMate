@@ -29,7 +29,7 @@ function initialMoves(){
 }
 
 var intervalId = null;
-var navVisible = false; // not visible
+var navOpen = false; // not visible
 
 function moveNav(direction) {
     var elem    = document.getElementById('sidenav'),
@@ -60,7 +60,7 @@ function moveNav(direction) {
         if (pos >= stop) {
               clearInterval(intervalId);
               intervalId = null;
-              navVisible = true;
+              navOpen = true;
         } else {
             if(pos + step >= stop){
                 pos = stop;
@@ -75,7 +75,7 @@ function moveNav(direction) {
         if (pos <= stop) {
             clearInterval(intervalId);
             intervalId = null;
-            navVisible = false;
+            navOpen = false;
         } else {
             if(pos + step <= stop){
                 pos = stop;
@@ -231,7 +231,7 @@ function hideLoader(){
 }
 
 window.addEventListener('resize', function(){
-    if(navVisible){
+    if(navOpen){
         var elem    = document.getElementById('sidenav'),
             header  = document.getElementsByTagName('header')[0];
 
