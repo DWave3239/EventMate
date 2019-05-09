@@ -136,7 +136,6 @@ function loadModal(id){
                 registerEvents();
                 hideLoader();
                 openModal();
-                console.log('done');
             }
         }
     };
