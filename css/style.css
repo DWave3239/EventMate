@@ -193,17 +193,26 @@ article, section, aside {
     z-index: 95;
 }
 
-#sidenav>div>ul {
+#sidenav>div{
+    overflow: auto;
+    height:100%;
+}
+
+.navtop {
+    height:88%;
+}
+
+.navtop>ul {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
 }
 
-#sidenav>div>ul>li>a {
+.navtop>ul>li>a {
     text-decoration: none;
 }
 
-#sidenav>div>ul>li>a>button {
+.navtop>ul>li>a>button {
     border-radius: 2px;
     margin: 2px auto;
     text-align: center;
@@ -212,10 +221,8 @@ article, section, aside {
 }
 
 .navbottom {
-    position: absolute;
-    bottom: 0px;
-    padding: 10px 10px;
-    width: 95%;
+    padding: 0 10px;
+    height:10%;
 }
 
 #login {

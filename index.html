@@ -24,6 +24,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/script.js?v=1.0"></script>
     <script src="js/move.js?v=1.0"></script>
+    <script src="js/swipe.js?v=0.1"></script>
     <script src="js/toast.js?v=1.0"></script>
     <script src="js/geolocation.js?v=0.9"></script>
     <script src="js/filter.js?v=0.9"></script>
@@ -50,28 +51,30 @@
         </div>
     </header>
     <nav id="sidenav">
-        <div style="overflow: auto;">
-            <table id="login">
-                <tr>
-                    <td><input type="text" placeholder="Username"></td>
-                </tr>
-                <tr>
-                    <td><input type="password" placeholder="Password"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Login" id="loginButton"></td>
-                </tr>
-            </table>
-            <hr />
-            <ul>
-                <li><a href="#" class="pagelink" data-pageId="index"><button>Near your location</button></a></li>
-                <li><a href="#" class="pagelink" data-pageId="yourEvents"><button>Your events</button></a></li>
-                <li><a href="#" class="pagelink" data-pageId="plannedToAttend"><button>Planned to attend</button></a>
-                </li>
-                <li><a href="add.html"><button>Add new event</button></a></li>
-                <li><a href="notificationTest.html"><button>Notification Testpage</button></a></li>
-                <li><a href="#" class="pagelink" data-pageId="about"><button>About</button></a></li>
-            </ul>
+        <div>
+            <div class="navtop">
+                <table id="login">
+                    <tr>
+                        <td><input type="text" placeholder="Username"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" placeholder="Password"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Login" id="loginButton"></td>
+                    </tr>
+                </table>
+                <hr />
+                <ul>
+                    <li><a href="#" class="pagelink" data-pageId="index"><button>Near your location</button></a></li>
+                    <li><a href="#" class="pagelink" data-pageId="yourEvents"><button>Your events</button></a></li>
+                    <li><a href="#" class="pagelink" data-pageId="plannedToAttend"><button>Planned to attend</button></a>
+                    </li>
+                    <li><a href="add.html"><button>Add new event</button></a></li>
+                    <li><a href="notificationTest.html"><button>Notification Testpage</button></a></li>
+                    <li><a href="#" class="pagelink" data-pageId="about"><button>About</button></a></li>
+                </ul>
+            </div>
             <div class="navbottom">
                 <hr />
                 Settings

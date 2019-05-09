@@ -38,7 +38,7 @@ main{
     background-color: #ffffff91;
 }
 
-#sidenav > div > ul > li > a > button {
+.navtop > ul > li > a > button {
     border: 1px solid white;
     background: #050505;
     color: #d0d0d0;

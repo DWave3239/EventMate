@@ -34,7 +34,7 @@ main{
     background-color: #00000091;
 }
 
-#sidenav > div > ul > li > a > button {
+.navtop > ul > li > a > button {
     border: 1px solid black;
     background: rgb(250, 250, 250);
     color: black;
