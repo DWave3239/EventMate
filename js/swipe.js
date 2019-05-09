@@ -52,10 +52,10 @@ function handleTouchMove(evt) {
     }else{
         if(yDiff > 0){
             /* up swipe */ 
-            direction = "up "+filterOpen;
+            direction = "up";
             // if filter is open -> close it
             if(filterOpen){
-                func2call = openFilter();
+                func2call = closeFilter;
             }
         }else{ 
             /* down swipe */
@@ -63,10 +63,10 @@ function handleTouchMove(evt) {
             /*
             // if modal is open -> close it
             if(modalOpen){
-                closeModal();
+                func2call = closeModal;
             }else{
                 if(!filterOpen){
-                    openFilter();
+                    func2call = openFilter;
                 }
             }*/
         }                                                                 
