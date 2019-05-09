@@ -52,7 +52,7 @@ function handleTouchMove(evt) {
     }else{
         if(yDiff > 0){
             /* up swipe */ 
-            direction = "up";
+            direction = "up "+filterOpen;
             // if filter is open -> close it
             if(filterOpen){
                 func2call = openFilter();
