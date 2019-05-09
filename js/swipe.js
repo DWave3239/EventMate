@@ -75,7 +75,7 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;   
     
-    document.getElementById('footer').innerHTML = "<p>Detected move ("+direction+") / "+func2call+"</p>";
+    //document.getElementById('footer').innerHTML = "<p>Detected move ("+direction+")</p>";
 
     if(func2call) func2call();
 };
