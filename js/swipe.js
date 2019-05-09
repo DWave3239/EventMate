@@ -14,7 +14,7 @@ function handleTouchStart(evt) {
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;
     
-    document.getElementById('map').innerHTML = "Detected touch!";
+    document.getElementById('footer').innerHTML = "<p>Detected touch!</p>";
 };                                                
 
 function handleTouchMove(evt) {
@@ -29,6 +29,7 @@ function handleTouchMove(evt) {
     var yDiff = yDown - yUp;
 
     var direction;
+    var func2call;
 
     if(Math.abs(xDiff) > Math.abs(yDiff)){/*most significant*/
         if(xDiff > 0){
@@ -37,7 +38,7 @@ function handleTouchMove(evt) {
             
             // if navigation is open -> close it
             if(navOpen){
-                changeSideNavIconRotation();
+                func2call = changeSideNavIconRotation;
             }
         }else{
             /* right swipe */
@@ -45,7 +46,7 @@ function handleTouchMove(evt) {
 
             // if navigation is not open -> open it
             if(!navOpen){
-                changeSideNavIconRotation();
+                func2call = changeSideNavIconRotation;
             }
         }                       
     }else{
@@ -54,7 +55,7 @@ function handleTouchMove(evt) {
             direction = "up";
             // if filter is open -> close it
             if(filterOpen){
-                openFilter();
+                func2call = openFilter();
             }
         }else{ 
             /* down swipe */
@@ -74,5 +75,7 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;   
     
-    document.getElementById('map').innerHTML = "Detected move ("+direction+")";
+    document.getElementById('footer').innerHTML = "<p>Detected move ("+direction+")</p>";
+
+    if(func2call) window[func2call]();
 };
