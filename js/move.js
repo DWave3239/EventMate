@@ -36,7 +36,7 @@ function moveNav(direction) {
         header  = document.getElementsByTagName('header')[0],
         underlay= document.getElementById('sidenavunderlay'),
         stop    = header.getBoundingClientRect().left, 
-        step    = getPageWidth()/50,
+        step    = getPageWidth()/100,
         pos     = elem.getBoundingClientRect().left;
 
     if(intervalId){
@@ -92,7 +92,7 @@ function closeModal(){
         stop        = getPageHeight()-10,
         pos         = modal.getBoundingClientRect().top,
         pos2        = getPageHeight() - modal.getBoundingClientRect().bottom,
-        step        = getPageHeight()/10,
+        step        = getPageHeight()/50,
         intervalId  = null;
     
     modal.style.top     = pos  + 'px';
@@ -128,7 +128,7 @@ function openModal(){
     var stop        = 45,
         pos         = modal.getBoundingClientRect().top,
         pos2        = getPageHeight() - modal.getBoundingClientRect().bottom,
-        step        = -getPageHeight()/10,
+        step        = -getPageHeight()/50,
         intervalId  = null;
 
     modal.style.display = 'block';
@@ -162,7 +162,7 @@ function closeFilter(){
         stop        = -(filterHeight+10),
         pos         = filter.getBoundingClientRect().top,
         pos2        = getPageHeight() - filter.getBoundingClientRect().bottom,
-        step        = -getPageHeight()/10,
+        step        = -getPageHeight()/50,
         intervalId  = null;
 
     intervalId = setInterval(move, 1);
@@ -193,7 +193,7 @@ function openFilter(){
         stop        = 90,
         pos         = parseInt(filter.style.top.slice(0, -2)),
         pos2        = parseInt(filter.style.bottom.slice(0, -2)),
-        step        = getPageHeight()/10,
+        step        = getPageHeight()/50,
         intervalId  = null;
     
     filter.style.top     = pos  + 'px';
