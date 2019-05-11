@@ -104,6 +104,7 @@ function closeModal(){
     function move(){
         if (pos >= stop) {
             document.getElementsByTagName('body')[0].style.overflow = 'auto';
+            document.getElementsByTagName('body')[0].classList.remove('no_reload');
             modal.style.display = 'none';
             clearInterval(intervalId);
             intervalId = null;
@@ -138,6 +139,7 @@ function openModal(){
     function move(){
         if (pos <= stop) {
             document.getElementsByTagName('body')[0].style.overflow = 'auto';
+            document.getElementsByTagName('body')[0].classList.add('no_reload');
             clearInterval(intervalId);
             intervalId = null;
             modal.style.bottom = '40px';

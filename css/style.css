@@ -199,7 +199,7 @@ article, section, aside {
 }
 
 .navtop {
-    height: 87%;
+    height: calc(100% - 100px);
 }
 
 .navtop>ul {
@@ -222,7 +222,7 @@ article, section, aside {
 
 .navbottom {
     padding: 0 10px;
-    height: 10%;
+    height: 100px;
 }
 
 #login {
@@ -651,4 +651,9 @@ ul.aboutDevelopmentDevelopers {
 
 .aboutDevelopmentCopyright {
     margin: 20px 0px 20px 0px;
+}
+
+/* CSS TRICKERY TO DISABLE PULL-DOWN RELOAD */
+.no_reload { 
+    overscroll-behavior: none;
 }

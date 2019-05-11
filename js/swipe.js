@@ -1,4 +1,4 @@
-//document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchstart', handleTouchStart, false);        
 document.addEventListener('touchmove', handleTouchMove, false);
 
 var xDown = null;                                                        
@@ -10,11 +10,11 @@ function getTouches(evt) {
 }                           
 
 function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];                                      
-    xDown = firstTouch.clientX;                                      
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
     yDown = firstTouch.clientY;
     
-    // document.getElementById('footer').innerHTML = "<p>Detected touch!</p>";
+    document.getElementById('footer').innerHTML = "<p>Detected touch!</p>";
 };
 
 function handleTouchMove(evt) {
@@ -22,7 +22,7 @@ function handleTouchMove(evt) {
         return;
     }
 
-    var xUp = evt.touches[0].clientX;                                    
+    var xUp = evt.touches[0].clientX;
     var yUp = evt.touches[0].clientY;
 
     var xDiff = xDown - xUp;
@@ -60,11 +60,11 @@ function handleTouchMove(evt) {
         }else{ 
             /* down swipe */
             direction = "down";
-            /*
+            
             // if modal is open -> close it
             if(modalOpen){
                 func2call = closeModal;
-            }else{
+            }/*else{
                 if(!filterOpen){
                     func2call = openFilter;
                 }
@@ -75,7 +75,7 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;   
     
-    //document.getElementById('footer').innerHTML = "<p>Detected move ("+direction+")</p>";
+    document.getElementById('footer').innerHTML = "<p>Detected move ("+direction+")</p>";
 
     if(func2call) func2call();
-};
+};  

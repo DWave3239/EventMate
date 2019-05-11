@@ -195,9 +195,9 @@ function keyCloseModal (e) {
     }
 }
 
-$(function(){
+/*$(function(){
     $('*[data-href]').click(function(){
         window.open($(this).data('href'));
         return false;
     });
-});
+});*/
