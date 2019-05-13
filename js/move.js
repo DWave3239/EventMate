@@ -206,6 +206,7 @@ function openFilter(){
     function move(){
         if (pos >= stop) {
             document.getElementsByTagName('body')[0].style.overflow = 'auto';
+            filter.style.bottom = (getPageHeight() - document.getElementById('footer').getBoundingClientRect().top) +'px';
             clearInterval(intervalId);
             intervalId = null;
             filterOpen = true;

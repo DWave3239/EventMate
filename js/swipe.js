@@ -33,7 +33,7 @@ function handleTouchMove(evt) {
 
     if(Math.abs(xDiff) > Math.abs(yDiff)){/*most significant*/
         if(xDiff > 0){
-            /* left swipe */ 
+            /* left swipe */
             direction = "left";
             
             // if navigation is open -> close it
@@ -45,7 +45,7 @@ function handleTouchMove(evt) {
             direction = "right";
 
             // if navigation is not open -> open it
-            if(!navOpen){
+            if(!navOpen && xDown <= 30){
                 func2call = changeSideNavIconRotation;
             }
         }                       

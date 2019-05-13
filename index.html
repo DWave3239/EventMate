@@ -87,11 +87,6 @@
         </div>
     </nav>
     <nav id="sidenavunderlay">&nbsp;</nav>
-    <div class="searchbar">
-        <input id="locationName" class="locationName" type="text" oninput="updateQuery(this.value)"
-            onblur="clearLocationInterval()" onfocus="setLocationInterval()">
-        <div id="result" class="result"></div>
-    </div>
     <main id="maincontent">
         <div class="map eventTile" id="map">Location </div>
         <article class="eventTile">
@@ -259,6 +254,16 @@
                                     <!-- make date picker -->
                                 </tr>
                             </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Location:</td>
+                        <td>
+                            <div class="searchbar">
+                                <input id="locationName" class="locationName" type="text" oninput="updateQuery(this.value)"
+                                    onblur="clearLocationInterval()" onfocus="setLocationInterval()">
+                                <div id="result" class="result"></div>
+                            </div>
                         </td>
                     </tr>
                 </table>
