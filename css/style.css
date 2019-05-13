@@ -140,13 +140,13 @@ article, section, aside {
     font-size: 25px;
 }
 
-.searchbar {
+/*.searchbar {
     top: 90px;
     position: absolute;
     height: 30px;
     overflow: visible;
     z-index: 11;
-}
+}*/
 
 .result {
     border-radius: 10px;
