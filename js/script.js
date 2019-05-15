@@ -168,7 +168,7 @@ function loadPage(id){
                 if(modalOpen){
                     closeModal();
                 }
-                if(navVisible){
+                if(navOpen){
                     changeSideNavIconRotation();
                 }
                 registerEvents();
