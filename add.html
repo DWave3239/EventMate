@@ -45,7 +45,7 @@
                                     var reader = new FileReader();
                                     reader.onload = function (e) {
                                         $('#eventImg').attr('src', e.target.result);
-                                    }
+                                    };
                                     reader.readAsDataURL(input.files[0]);
                                 }
                             }
@@ -56,11 +56,12 @@
                                     var reader = new FileReader();
                                     reader.onload = function (e) {
                                         document.getElementById('eventImg').setAttribute('src', e.target.result);
-                                    }
+                                    };
                                     reader.readAsDataURL(files[0]);
                                 }
                             }
                             document.getElementById('imgInp').addEventListener('change', handleImgSelect, false);
+                            console.log("bound");
                             </script>
                         </label>
                     </td>

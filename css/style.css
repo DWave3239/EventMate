@@ -140,6 +140,9 @@ article, section, aside {
     font-size: 25px;
 }
 
+.searchbar>input {
+    width: 100%;
+}
 /*.searchbar {
     top: 90px;
     position: absolute;
@@ -193,7 +196,7 @@ article, section, aside {
     z-index: 95;
 }
 
-#sidenav>div{
+#sidenav>div {
     overflow: auto;
     height: calc(100% - 20px);
 }
@@ -342,6 +345,10 @@ main#filter {
 #filtercontentpane {
     height: 100%;
     overflow: auto;
+}
+
+#filterform td:nth-child(2) {
+    width: 100%;
 }
 
 #filter .close {

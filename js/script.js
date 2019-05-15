@@ -132,7 +132,15 @@ function loadModal(id){
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
             if(json.type === 'modal'){
-                document.getElementById('modalcontentpane').innerHTML = json.contents;
+                if(typeof(json.contents.html) !== "undefined"){
+                    document.getElementById('modalcontentpane').innerHTML = json.contents.html;
+                }
+                if(typeof(json.contents.js) !== "undefined"){
+                    var g = document.createElement('script');
+                    var s = document.getElementById('modalcontentpane');
+                    g.text = json.contents.js; // can only handle correctly formatted js
+                    s.parentNode.insertBefore(g, s);
+                }
                 registerEvents();
                 hideLoader();
                 openModal();
@@ -151,9 +159,12 @@ function loadPage(id){
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
             if(json.type === 'page'){
-                document.getElementById('centerHeaderDiv').innerHTML = json.contents.header;
-                document.getElementById('maincontent').innerHTML = json.contents.page;
-
+                if(typeof(json.contents.header) !== "undefined"){
+                    document.getElementById('centerHeaderDiv').innerHTML = json.contents.header;
+                }
+                if(typeof(json.contents.html) !== "undefined"){
+                    document.getElementById('maincontent').innerHTML = json.contents.html;
+                }
                 if(modalOpen){
                     closeModal();
                 }
