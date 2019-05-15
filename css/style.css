@@ -253,7 +253,7 @@ main#modal {
     max-width: 70em;
     width: 100%;
     display: none;
-    z-index: 450;
+    z-index: 45;
 }
 
 #modalunderlay {
